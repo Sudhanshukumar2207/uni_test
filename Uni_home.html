@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduInfo Educational Consultancy</title>
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .html {
+        font-size: 62.5%;
+    }
+
+    .main {
+        /* border: solid .1rem black; */
+        height: auto;
+    }
+
+    @media(max-width:998px) {
+        html {
+            font-size: 55%;
+        }
+    }
+
+    @media(max-width:768px) {
+        html {
+            font-size: 35%;
+        }
+    }
+
+    .navbar {
+        /* border: solid .1rem white; */
+        display: flex;
+        background: white;
+        background-blend-mode: darken;
+        /* position: sticky; */
+        /* top: 0; */
+        width: auto;
+        overflow: hidden;
+        border: hidden;
+        /* box-shadow: 0 12px 6px -6px black; */
+        justify-content: space-between;
+    }
+
+    .leftnav {
+        height: auto;
+        width: auto;
+        /* border: solid .1rem black; */
+        margin-left: 3rem;
+    }
+
+    .leftnav img {
+        width: 38rem;
+        height: 4rem;
+        margin-top: .4rem;
+        /* border: solid .1rem black; */
+    }
+
+    .rightnav {
+        height: 5rem;
+        background: white;
+        display: flex;
+        /* border: solid .1rem black; */
+    }
+
+    .rightnav li {
+        list-style: none;
+        padding: 2rem 2rem;
+        /* border:  solid .1rem white; */
+    }
+
+    .rightnav a {
+        text-decoration: none;
+        color: black;
+        padding: .3rem;
+    }
+
+    .rightnav a:hover {
+        color: Teal;
+        border-bottom: solid .2rem #f7ca1a;
+        border-radius: 1rem;
+
+    }
+
+    .firstsection {
+        /* border: solid .1rem black; */
+        border: hidden;
+        height: auto;
+        width: 100%;
+        display: flex;
+        background-color: teal;
+        /* justify-content: space-around; */
+    }
+
+    .firstsection img {
+        /* border: solid .1rem black; */
+        height: 25rem;
+        width: 30rem;
+        /* filter: blur(.1rem) drop-shadow(10px 6px 10px black); */
+    }
+
+    .firstsection-child {
+        /* border: solid .1rem black; */
+        height: auto;
+        width: auto;
+    }
+
+    .firstsection-child2 .p1 {
+        font-size: 3rem;
+        padding-top: 5rem;
+        color: white;
+    }
+
+    .firstsection-child2 hr {
+        filter: blur(2px);
+        height: .5rem;
+        background-color: yellow;
+    }
+
+    .firstsection-child2 .p2 {
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
+
+    .secondsecton {
+        height: auto;
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .secondsection-parent1 {
+        height: auto;
+        width: auto;
+        /* border: solid .1rem black; */
+        background-color: teal;
+        /* margin-left: 2rem; */
+    }
+
+    .secondsection-child1 {
+        /* border: solid .1rem black; */
+        width: auto;
+        height: auto;
+        margin-top: 3rem;
+        margin-left: 2rem;
+    }
+
+    .secondsection-child2 {
+        height: auto;
+        width: auto;
+        /* border: solid .1rem black; */
+        background-color: rgb(83, 146, 146);
+        margin-left: 2rem;
+        margin-right: 2rem;
+        border-radius: 1rem;
+    }
+
+    h2 {
+        padding-top: 3rem;
+        padding-left: 2rem;
+        color: white;
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        padding-top: 1rem;
+        padding-left: 2rem;
+        padding-bottom: 3rem;
+        color: white;
+        font-size: 1.1rem;
+    }
+
+    .secondsection-child3 {
+        height: auto;
+        width: auto;
+        /* border: solid .1rem black; */
+        background-color: rgb(83, 146, 146);
+        margin-top: 1rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        border-radius: 1rem;
+    }
+
+    .secondsection-child4 {
+        height: auto;
+        width: auto;
+        /* border: solid .1rem black; */
+        background-color: rgb(83, 146, 146);
+        margin-top: 1rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        border-radius: 1rem;
+    }
+
+    .secondsection-child2:hover {
+        box-shadow: 0 0 .5rem white;
+    }
+
+    .secondsection-child3:hover {
+        box-shadow: 0 0 .5rem white;
+    }
+
+    .secondsection-child4:hover {
+        box-shadow: 0 0 .5rem white;
+    }
+
+    .secondsection-child1 p {
+        font-size: 2rem;
+        color: yellow;
+    }
+
+    .secondsection-parent2 {
+        /* border: solid .1rem black; */
+        margin-top: 8rem;
+        height: auto;
+        width: auto;
+        margin-right: 4rem;
+        /* background-color: red; */
+    }
+
+    .secondsection-parent2 img {
+        height: 40rem;
+        width: 40rem;
+        /* border: solid .1rem black; */
+    }
+
+    .thirdsection {
+        width: auto;
+        height: auto;
+        display: flex;
+        /* justify-content: space-evenly; */
+    }
+
+    .thirdsection-child1 {
+        height: auto;
+        width: auto;
+        margin-top: 4rem;
+    }
+
+    .thirdsection-child1 hr {
+        width: 20rem;
+        height: .4rem;
+        background-color: yellow;
+        margin-left: 20rem;
+        border-top-left-radius: .5rem;
+        border-bottom-left-radius: .5rem;
+    }
+
+    .thirdsection-child2 {
+        height: auto;
+        width: auto;
+        margin-top: 3rem;
+    }
+
+    .thirdsection-child2 p {
+        font-size: 2rem;
+    }
+
+    .thirdsection-child3 {
+        height: auto;
+        width: auto;
+        margin-top: 4rem;
+    }
+
+    .thirdsection-child3 hr {
+        width: 20rem;
+        height: .4rem;
+        background-color: yellow;
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+    }
+
+    .forthsection {
+        height: auto;
+        width: auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        transition: all 0.2s linear;
+        /* border: solid .1rem black; */
+    }
+
+    .forthsection-child1 {
+        height: auto;
+        width: auto;
+        box-shadow: 0px 5px 35px rgba(8, 8, 8, 0.25);
+        margin-top: 3rem;
+        cursor: pointer;
+    }
+
+    .forthsection-child_child {
+        height: 25rem;
+        width: 22rem;
+        overflow: hidden;
+        margin: 1rem .8rem 0 .8rem;
+    }
+
+    .forthsection-child1 .i {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 500ms ease-in-out;
+    }
+
+    .forthsection-child1:hover .i {
+        transform: scale(1.2);
+    }
+
+    .forthsection-child1 .p3 {
+        font-size: 1.4rem;
+        margin: 1rem 0 0 1rem;
+    }
+
+    .forthsection-child1 .p4 {
+        font-size: 1.1rem;
+        margin: 1rem 1rem 1rem 1rem;
+    }
+
+    .forthsection-child1 input {
+        width: 8rem;
+        height: 2.5rem;
+        border-radius: .4rem;
+        margin: 0 2rem 2rem 2rem;
+        box-shadow: 0 0 2px black;
+    }
+
+    .btn {
+        font-size: 1.1rem;
+        border: hidden;
+        cursor: pointer;
+    }
+
+    .forthsection-child1 .btn:hover {
+        background-color: blue;
+        color: white;
+        box-shadow: 0 0 2rem black;
+    }
+
+    .fithsection {
+        height: 15rem;
+        width: auto;
+        display: flex;
+        overflow: hidden;
+        /* border: solid .1rem black; */
+    }
+
+    #d1,
+    #d2,
+    #d3,
+    #d4,
+    #d5,
+    #d6 {
+        height: auto;
+        width: auto;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        position: relative;
+        animation-timing-function: linear;
+        animation-duration: 15s;
+        margin-top: 2rem;
+        /* border: solid .1rem black; */
+    }
+
+    #d1 {
+        animation-name: d1;
+        animation-delay: -.4s;
+    }
+
+    #d2 {
+        animation-name: d2;
+        animation-delay: -2.8s;
+    }
+
+    #d3 {
+        animation-name: d3;
+        animation-delay: -5.5s;
+    }
+
+    #d4 {
+        animation-name: d4;
+        animation-delay: -8.1s;
+    }
+
+    #d5 {
+        animation-name: d5;
+        animation-delay: -10s;
+    }
+
+    #d6 {
+        animation-name: d6;
+        animation-delay: -13s;
+    }
+
+    @keyframes d1 {
+        0% {
+            left: -20%
+        }
+
+        100% {
+            left: 100%;
+        }
+    }
+    @keyframes d2 {
+        0% {
+            left: -35%
+        }
+
+        100% {
+            left: 85%;
+        }
+    }
+    @keyframes d3 {
+        0% {
+            left: -52%
+        }
+
+        100% {
+            left: 68%;
+        }
+    }
+    @keyframes d4 {
+        0% {
+            left: -68%
+        }
+
+        100% {
+            left: 52%;
+        }
+    }
+    @keyframes d5 {
+        0% {
+            left: -80%
+        }
+
+        100% {
+            left: 40%;
+        }
+    }
+    @keyframes d6 {
+        0% {
+            left: -100%
+        }
+
+        100% {
+            left: 20%;
+        }
+    }
+
+    .fithsection img {
+        width: 15rem;
+        height: 10rem;
+    }
+
+    .sixthsection {
+        /* border: solid .1rem black; */
+        height: auto;
+        width: auto;
+    }
+    .sixthsection-child1 {
+        height: auto;
+        width: auto;
+    }
+    .sixthsection-child1 p{
+        font-size: 2rem;
+        padding: 2rem 0 2rem 35rem;
+    }
+    .sixthsection-child2 {
+        height: auto;
+        width: auto;
+    }
+
+    .accordion {
+        background-color: teal;
+        color: white;
+        cursor: pointer;
+        padding: 2rem;
+        width:90%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 1.2rem;
+        transition: 0.4s;
+        margin-left: 5rem;
+        box-shadow: 0 0 1rem black;
+    }
+
+    .active,
+    .accordion:hover {
+        background-color: lightblue;
+        color: black;
+    }
+
+    .accordion:after {
+        content: '\002B';
+        color: #111;
+        font-weight: bold;
+        float: right;
+        /* margin-left: 2rem; */
+    }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .panel {
+        padding: .6rem 20rem 0 6rem;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+    .panel p{
+        padding-bottom: 1rem;
+    }
+    .seventhsection{
+        height: auto;
+        width: auto;
+    }
+    .seventhsection-parent{
+        width: auto;
+        height: 20rem;
+        background-color: #605e5e;
+        margin-top: 2rem;
+    }
+</style>
+
+<body oncontextmenu="return false;" style="user-select: none;">
+    <div class="main">
+        <div class="navbar background">
+            <div class="leftnav">
+                <img src="LOGO-removebg-preview0.png" alt="Logo..">
+            </div>
+            <div class="rightnav">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#contact">CONTACT US</a></li>
+            </div>
+        </div>
+        <div class="firstsection">
+            <div class="firstsection-child1">
+                <img src="img2.png" alt="Loading...">
+            </div>
+            <div class="firstsection-child2">
+                <p class="p1">
+                    What does it take to get into a university?
+                </p>
+                <hr>
+                <p class="p2">
+                    Our mission is to provide comprehensive guidance <br>
+                    and support to students to help them reach their <br>
+                    higher education goals.
+                </p>
+            </div>
+        </div>
+        <div class="secondsecton">
+            <div class="secondsection-parent1">
+                <div class="secondsection-child1">
+                    <b>
+                        <p>ABOUT US</p>
+                    </b>
+                    <hr>
+                </div>
+                <br>
+                <div class="secondsection-child2">
+                    <h2>Who are we?</h2>
+                    <hr style="width: 10rem; margin-left: 2rem;">
+                    <h3>EDUINFO Educational Consultancy is a skill development organization <br>
+                        that was established to build an infrastructure for learners & equip <br>
+                        them with future-ready skills & talent, using the latest pedagogical tools.</h3>
+                </div>
+                <div class="secondsection-child3">
+                    <h2>What we do?</h2>
+                    <hr style="width: 10.1rem; margin-left: 2rem;">
+                    <h3>We partner with Universities and training institutions and enable them <br>
+                        with infrastructure development, and relevant qualifications that are <br>
+                        recognized and respected by employers all over the world.</h3>
+                </div>
+                <div class="secondsection-child4">
+                    <h2>Vision and Mission</h2>
+                    <hr style="width: 16.5rem; margin-left: 2rem;">
+                    <h3>Our vision is to emerge as a leading educational entity delivering what's <br>
+                        necessary to bridge the skill gap which exists around the learning <br>
+                        demographic and to make education more innovative and interactive.</h3>
+                </div>
+            </div>
+            <div class="secondsection-parent2">
+                <img src="PortalsCollaboration_Avatar01.png" alt="Loading...">
+            </div>
+        </div>
+        <div class="thirdsection">
+            <div class="thirdsection-child1">
+                <hr>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="thirdsection-child2">
+                <p>Our Universities</p>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="thirdsection-child3">
+                <hr>
+            </div>
+        </div>
+        <div class="forthsection">
+            <div class="forthsection-child1">
+                <div class="forthsection-child_child">
+                    <img class="i" src="shutterstock-1056186944-1579589292.jpg" alt="Loading...">
+                </div>
+                <p class="p3">PUNE UNIVERSITY</p><br>
+                <hr>
+                <p class="p4"><b>Courses</b>:BBA,MBA,B.Com,M.Com,etc.
+                    <br><br><b>Mode</b>:Regular,Distance,Online,Private,etc</p><br>
+                <input type="button" value="Read more" class="btn">
+            </div>
+            <div class="forthsection-child1">
+                <div class="forthsection-child_child">
+                    <img class="i" src="151016033701_srm-university.webp" alt="Loading...">
+                </div>
+                <p class="p3">SRM UNIVERSITY</p><br>
+                <hr>
+                <p class="p4"><b>Courses</b>:BBA,MBA,B.Com,M.Com,etc.
+                    <br><br><b>Mode</b>:Regular,Distance,Online,Private,etc</p><br>
+                <input type="button" value="Read more" class="btn">
+            </div>
+            <div class="forthsection-child1">
+                <div class="forthsection-child_child">
+                    <img class="i" src="R.jfif.jpg" alt="">
+                </div>
+                <p class="p3">ANAMALAI UNIVERSITY</p><br>
+                <hr>
+                <p class="p4"><b>Courses</b>:BBA,MBA,B.Com,M.Com,etc.
+                    <br><br><b>Mode</b>:Regular,Distance,Online,Private,etc</p><br>
+                <input type="button" value="Read more" class="btn">
+            </div>
+            <div class="forthsection-child1">
+                <div class="forthsection-child_child">
+                    <img class="i" src="Jain-University-Bangalore-1-1-1024x576.jpg" alt="Loading...">
+                </div>
+                <p class="p3">JAIN UNIVERSITY</p><br>
+                <hr>
+                <p class="p4"><b>Courses</b>:BBA,MBA,B.Com,M.Com,etc.
+                    <br><br><b>Mode</b>:Regular,Distance,Online,Private,etc</p><br>
+                <input type="button" value="Read more" class="btn">
+            </div>
+        </div>
+        <div class="thirdsection">
+            <div class="thirdsection-child1">
+                <hr>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="thirdsection-child2">
+                <p>Our Affiliation</p>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="thirdsection-child3">
+                <hr>
+            </div>
+        </div>
+        <div class="fithsection">
+            <div id="d1">
+                <img src="989dbdee6451a4a3bb59b64aeede92ea.png" alt="">
+            </div>
+            <div id="d2">
+                <img src="ugc-logo-removebg-preview.png" alt="">
+            </div>
+            <div id="d3">
+                <img src="aicte-logo.png" alt="">
+            </div>
+            <div id="d4">
+                <img src="na.png" alt="">
+            </div>
+            <div id="d5">
+                <img src="Shri_Venkateshwara_University_logo-300x292.png" alt="">
+            </div>
+            <div id="d6">
+                <img src="cbse-logo-website1.webp" alt="">
+            </div>
+        </div>
+        <div class="sixthsection">
+            <div class="sixthsection-child1">
+                <p>Let's clear up some doubts</p>
+            </div>
+            <div class="sixsction-child2">
+                <button class="accordion">Do payments made by students go directly into the university accounts?</button>
+                <div class="panel">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+                <button class="accordion">How is company different from others?</button>
+                <div class="panel">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+                <button class="accordion">What are our company Advantages?</button>
+                <div class="panel">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                
+                <button class="accordion">Can ther be errars on our company?</button>
+                <div class="panel">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="seventhsection">
+            <div class="seventhsection-parent">
+
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

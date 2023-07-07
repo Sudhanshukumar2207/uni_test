@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to EduInfo</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+        }
+        .main{
+            width: 350px;
+            height: 540px;
+            background: #004dff;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 5px 20px 50px #000;
+        }
+        #chk{
+            display: none;
+        }
+        .signup{
+            position: relative;
+            width:100%;
+            height: 100%;
+        }
+        label{
+            color: #fff;
+            font-size: 2.3em;
+            justify-content: center;
+            display: flex;
+            margin: 10px 60px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .5s ease-in-out;
+        }
+        #log{
+            margin-top: 40px;
+        }
+        input,select{
+            width: 70%;
+            height: 20px;
+            background: #e0dede;
+            justify-content: center;
+            display: flex;
+            margin: 10px auto;
+            padding: 8px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        #un{
+            margin-top: 18px;
+            text-transform: capitalize;
+        }
+        select{
+            width: 75%;
+            height: 35px;
+            padding: 0 0 0 10px;
+        }
+        #cap,#capm{
+            display: inline;
+            width: 25%;
+            margin-left: 5%;
+        }
+        #cap{
+            width: 25%;
+            margin-left: 12%;
+            font-size: 20px;
+            background: #004dff;
+        }
+        #cap::placeholder{
+            color: white;
+        }
+        #cpw{
+            margin-top: 25px;
+        }
+        #b1,#b2{
+            width: 60%;
+            height: 40px;
+            margin: 10px auto;
+            justify-content: center;
+            display: block;
+            color: #fff;
+            background: #573b8a;
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 10px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            transition: .2s ease-in;
+            cursor: pointer;
+        }
+        #b1{
+            margin-top: 5px;
+        }
+        #luid,#lpas,#b2{
+            margin-top: 40px;
+        }
+        #b1:hover{
+            background: #6d44b8;
+        }
+        #b2:hover{
+            background: #6d44b8;
+        }
+        .login{
+            margin-top: -425px;
+            height: 560px;
+            background: #eee;
+            border-radius: 60% / 10%;
+            transform: translateY(-110px);
+            transition: .8s ease-in-out;
+        }
+        .login label{
+            color: #573b8a;
+            transform: scale(1);
+        }
+        .signup label{
+            transform: scale(.6);
+        }
+        
+        #chk:checked ~ .login{
+            transform: translateY(320px);
+        }
+        #chk:checked ~ .login label{
+            transform: scale(.6);	
+        }
+        #chk:checked ~ .signup label{
+            transform: scale(1);
+        }
+        #eye1,#eye2{
+            position: absolute;
+            margin-left: 275px;
+            margin-top: -37px;
+            cursor: pointer;
+        }
+        #capp{
+            font-size: 22px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        p{
+            position: absolute;
+            color: red;
+            margin:2px 0 0 50px;
+        }
+        #lpw{
+            font-size: 12px;
+            position: absolute;
+            margin-top: -5px;
+            margin-left: 80px;
+        }
+        #fp{
+            margin-top: 50px;
+            text-align: center;
+        }
+        #fp a{
+            text-decoration: none;
+        }
+            </style>
+            <body oncontextmenu="return false;" style="user-select: none;">
+                    <div class="main">  
+                        <p id="p1"></p>	
+                        <input type="checkbox" id="chk" aria-hidden="true">
+                            <div class="signup">
+                                <form>
+                                    <label for="chk" aria-hidden="true" id="sin">Sign up</label>
+                                    <input type="text" placeholder="User Name*" id="un" onfocusout="chk1('#un')" onfocus="clr1('#un')">
+                                    <input type="text" placeholder="User ID*" id="uid" onfocusout="chk1('#uid')" onfocus="clr1('#uid')">
+                                    <input type="password" placeholder="Password*" id="pw" onfocusout="chk1('#pw')" onfocus="clr1('#pw')">
+                                    <span id="eye1" class="fa fa-fw fa-eye" onclick="eye('#eye1','#pw')"></span>
+                                    <label id="lpw"></label>
+                                    <input type="password" placeholder="Repeat Password*" id="cpw" onfocusout="chk1('#cpw')" onfocus="clr1('#cpw')">
+                                    <select id="sq" onfocusout="chk2('#sq')" onfocus="clr2('#sq')">
+                                        <option value="" selected disabled>Security Question</option>
+                                        <option value="What Is your favorite book?">What Is your favorite book?</option>
+                                        <option value="What was the name of your first/current/favorite pet?">What was the name of yourfirst/current/favorite pet?</option>
+                                        <option value="Where did you go to high school/college?">Where did you go to high school/college?</option>
+                                        <option value="What is your favorite food?">What is your favorite food?</option>
+                                        <option value="What city were you born in?">What city were you born in?</option>
+                                        <option value="Where is your favorite place to vacation?">Where is your favorite place to vacation?</option>
+                                    </select>
+                                    <input type="text" placeholder="Security Answer*" id="sa" onfocusout="chk1('#sa')" onfocus="clr1('#sa')">
+                                    <input type="text" placeholder="" id="cap" readonly>
+                                    <i id="capp" class="fa fa-refresh fa-spin"></i>
+                                    <input type="text" id="capm" placeholder="Captcha*">
+                                    <input type="button" value="Sign up" id="b1">
+                                </form>
+                            </div>
+                            <div class="login">
+                                <form>
+                                    <label for="chk" aria-hidden="true" id="log">Login</label>
+                                    <input type="text"placeholder="User ID*" id="luid" onfocusout="chk1('#luid')" onfocus="clr1('#luid')">
+                                    <input type="password" placeholder="Password*" id="lpas" onfocusout="chk1('#lpas')" onfocus="clr1('#lpas')">
+                                    <span id="eye2" class="fa fa-fw fa-eye" onclick="eye('#eye2','#lpas')"></span>
+                                    <input type="button" value="Login" id="b2">
+                                </form>
+                                    <div id="fp"><a href="f_p.html">Forget Password?</a></div>
+                            </div>
+                        </div>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                        <script>
+                            var ey=0
+                            flag=true
+                            // ---------------------------- Field mandatory --------------
+                            function chk1(t){
+                                a=$(t).val().trim()
+                                if(a==''){
+                                    $(t).val('Field is mandatory!')
+                                    $(t).css({'color':'red','border':'.1rem solid red'})
+                                    flag=false
+                                    if(t=='#lpas' || t=='#pw'){
+                                        $(t).attr('type','text')
+                                        $('#eye1,#eye2').attr('class','fa fa-fw fa-eye-slash')
+                                        ey=1
+                                    }
+                                    else if(t=='#cpw')
+                                        $(t).attr('type','text')
+                                }
+                                else if(a=='Field is mandatory!'){
+                                    $(t).css({'color':'red','border':'.1rem solid red'})
+                                    flag=false
+                                    if(t=='#lpas' || t=='#pw'){
+                                        $(t).attr('type','text')
+                                        $('#eye1,#eye2').attr('class','fa fa-fw fa-eye-slash')
+                                        ey=1
+                                    }
+                                    else if(t=='#cpw')
+                                        $(t).attr('type','text')
+                                }
+                                else if(t=='#cpw')
+                                    pmatch()
+                            }
+                            function clr1(t){
+                                a=$(t).val()
+                                if(a=='Field is mandatory!'){
+                                    $(t).val('')
+                                    $(t).css({'color':'black','border':'none'})
+                                    if(t=='#lpas' || t=='#pw'){
+                                        $(t).attr('type','password')
+                                        ey=0
+                                        $('#eye1,#eye2').attr('class','fa fa-fw fa-eye')
+                                    }
+                                    else if(t=='#cpw')
+                                        $(t).attr('type','password')
+                                }
+                            }
+                            function chk2(t){
+                                if($(t).val()==null){
+                                    $(t).css('border','.1rem solid red')
+                                    flag=false
+                                }
+                            }
+                            function clr2(t){
+                                $(t).css({'color':'black','border':'none'})
+                            }
+                            // ---------------------------------- captcha ------------------------------
+                            function capt(){
+                                a=btoa(Math.random()*10000000000)
+                                a=a.substr(5,6)
+                                $("#cap").attr('placeholder',a)
+                            }
+                            $('#capp').click(function(){
+                                capt()
+                            })
+                            // ---------------------------------------------- log sin clear --------------------------
+                            $('#sin,#log').click(function(){
+                                $('#luid').val('')
+                                $('#lpas').val('')
+                                $('#un').val('')
+                                $('#uid').val('')
+                                $('#pw').val('')
+                                $('#cpw').val('')
+                                $('#sa').val('')
+                                $('#sq').val('')
+                                $('#sq').css({'color':'black','border':'none'})
+                                $('#luid').css({'color':'black','border':'none'})
+                                $('#lpas').css({'color':'black','border':'none'})
+                                $('#un').css({'color':'black','border':'none'})
+                                $('#uid').css({'color':'black','border':'none'})
+                                $('#pw').css({'color':'black','border':'none'})
+                                $('#cpw').css({'color':'black','border':'none'})
+                                $('#sa').css({'color':'black','border':'none'})
+                                ey=0
+                                $('#eye1').attr('class','fa fa-fw fa-eye')
+                                $('#eye2').attr('class','fa fa-fw fa-eye')
+                                capt()
+                            })
+                            // ----------------------------------------- pasword show hide -----------------------------------
+                            function eye(t,l){
+                                if(ey==0){
+                                    $(t).attr('class','fa fa-fw fa-eye-slash')
+                                    $(l).attr('type','text')
+                                    ey=1
+                                }
+                                else if(ey==1){
+                                    $(t).attr('class','fa fa-fw fa-eye')
+                                    $(l).attr('type','password')
+                                    ey=0
+                                }
+                            }
+                            // ---------------- validation ----------------------------------
+                            $('#un').on('keypress',function(a){
+                                if(!(a.which>=65 && a.which<=90 || a.which>=97 && a.which<=122 || a.which==32))
+                                    return false
+                                else if(a.which==32 && a.target.selectionStart==0)
+                                    return false
+                                else if(a.which==32 && $('#un').val().slice(-1)==' ')
+                                    a.preventDefault();
+                            })
+                            // ------------------------- password match ---------------------------------
+                            function pmatch(){
+                                if($('#pw').val()!='Field is mandatory!' && $('#cpw').val()!='Field is mandatory!')
+                                if($('#pw').val()!=$('#cpw').val()){
+                                    alert("Password don't match!")
+                                    flag=false
+                                }
+                            }
+                            $('#pw').on('input',function(){
+                                a=$(this).val().trim()
+                                b=a.match(/[0-9]/g)
+                                c=a.match(/[A-z]/g)
+                                d=a.match(/[!@#$%^&*`~(){}/?.>,<;:'"=_\\\[\}|]/g)
+                                if(a!=''){
+                                    if(d && b && c){
+                                        $('#lpw').css('color','green')
+                                        $('#lpw').html('Strong Password')
+                                    }
+                                    else if((d && b) || (d && c) || (b && c)){
+                                        $('#lpw').css('color','yellow')
+                                        $('#lpw').html('Average Password')
+                                    }
+                                    else{
+                                        $('#lpw').html('Weak Password')
+                                        $('#lpw').css('color','red')
+                                    }
+                                }
+                                else
+                                    $('#lpw').html('')
+                            })
+                            // -------------------------- captcha match ------------------------
+                            function cmatch(){
+                                if($("#cap").attr('placeholder')!=$('#capm').val())
+                                    flag=false
+                            }
+                            // ------------------------- sin up -------------------------
+                            var role; var status;
+                            $(document).ready(function(){
+                                $.ajax({
+                                    url:'uni_info.py',
+                                    method:'post',
+                                    data:{
+                                        t:'ready'
+                                    },
+                                    success:function(data){
+                                        if(data==0){
+                                            $('#p1').html('Welcome to Suppeer Admin Sign Up')
+                                            role=0
+                                            status=1
+                                        }
+                                        else{
+                                            $('#p1').html('')
+                                            role=4
+                                            status=0
+                                        }
+                                    }
+                                })
+                            })
+                            $('#b1').on('click',function(){
+                                flag=true
+                                chk1('#un')
+                                chk1('#uid')
+                                chk1('#pw')
+                                chk1('#cpw')
+                                chk1('#sa')
+                                chk2('#sq')
+                                pmatch()
+                                if(flag){
+                                    cmatch()
+                                    if(flag){
+                                        a=$('#un').val().trim()
+                                        b=$('#uid').val().trim()
+                                        c=$('#pw').val().trim()
+                                        d=$('#sq').val()
+                                        e=$('#sa').val().trim()
+                                        $.ajax({
+                                            url:'uni_info.py',
+                                            method:'post',
+                                            data:{
+                                                t:'sign',
+                                                t1:a,
+                                                t2:b,
+                                                t3:c,
+                                                t4:d,
+                                                t5:e,
+                                                t6:role,
+                                                t7:status
+                                            },
+                                            success:function(data){
+                                                if(data==0)
+                                                    alert('This User ID allready present!')
+                                                else{
+                                                    alert(data)
+                                                    location.reload()
+                                                }
+                                            }
+                                        })
+                                    }
+                                    else{
+                                        alert('Enter right captcha!')
+                                        $('#capm').val('')
+                                        capt()
+                                    }
+                                }
+                                else{
+                                    alert('All field is mandatory!')
+                                    $('#capm').val('')
+                                    capt()
+                                }
+                            })
+                            // ------------------------------------- default button --------------------
+                            $('#capm').on('keypress',function(a){
+                                if(a.which==13)
+                                    $('#b1').click()
+                            })
+                            $('#lpas').on('keypress',function(a){
+                                if(a.which==13)
+                                    $('#b2').click()
+                            })
+                            // ----------------------------- login ------------------------------
+                            $('#b2').on('click',function(){
+                                flag=true
+                                chk1('#luid')
+                                chk1('#lpas')
+                                if(flag){
+                                    a=$('#luid').val()
+                                    b=$('#lpas').val()
+                                    $.ajax({
+                                        url:'uni_info.py',
+                                        method:'post',
+                                        data:{
+                                            t:'login',
+                                            t1:a,
+                                            t2:b
+                                        },
+                                        success:function(data){
+                                            if(data==0)
+                                                alert("User Id password don't match!")
+                                            else if(data==1)
+                                                alert('Wait for approval!')
+                                            else{
+                                                a=data.split(',,,')
+                                                localStorage.setItem('u_n',a[0])
+                                                localStorage.setItem('role',a[1])
+                                                window.location.href='dashboard.html'
+                                            }
+                                        }
+                                    })
+                                }
+                                else
+                                    alert('Please enter user id and password')
+                            })
+                        </script>
+                </body>
+        </html>

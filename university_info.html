@@ -1,0 +1,796 @@
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Details</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <style>
+        html{
+            font-size: 10px;
+        } 
+        @media(max-width:998px) {
+            html {
+                font-size: 55%;
+            }
+        }
+        @media(max-width:768px) {
+            html {
+                font-size: 45%;
+            }
+            #d2{
+                flex-wrap: wrap;
+            }
+        }
+        body{background-color: #243949;}
+        #body{
+            margin: -1rem -1rem 0 -1rem;
+            height: auto;
+            width: auto;
+        }
+        #d0{
+            height: 10rem;
+        }
+        #d01,#d02{
+            float: left;
+            margin-left: 3rem;
+            height: 10rem;
+        }
+        #d01{
+            width: 12rem;
+        }
+        #i01{
+            height: 100%;
+            width: 100%;
+        }
+        #p02{
+            font-size: 3rem;
+            margin-top: 3rem;
+        }
+        .b1{
+            height: 5rem;
+            width: 20rem;
+            font-size: 2rem;
+            border-radius: 2rem 2rem 0 0;
+            margin-left: 2rem;
+            background-color: #f7deac;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+        #entry{
+            background-color: #243949;
+            color: white;
+        }
+        #ent,#ser{
+            height: auto;
+            background-color: #243949;
+        }
+        h2{
+            font-size: 2.5rem;
+            color: white;
+            height: 2.2rem;
+            margin-top: .8rem;
+        }
+        #d1,#d10{
+            border: .1rem solid blue;
+            text-align: center;
+            border-radius: 1rem;
+            margin: 2rem 1rem 0 1rem;
+            background-color: #447dac;
+        }
+        #d10{
+            background-color: rgb(125, 82, 118);
+        }
+        #d2{
+            border-radius: 3rem;
+            margin: 0 1rem 0 1rem;
+            justify-content: space-around;
+            display: flex;
+            /* flex-wrap: wrap; */
+        }
+        #d21,#d22,#d23{
+            margin-top: 3rem;
+        }
+        label{
+            font-size: 2rem;
+            color: white;
+        }
+        #d2 input{
+            font-size: 1.5rem;
+            height: 2rem;
+            color: black;
+            margin-left: 1rem;
+            border-radius: .1rem;
+        }
+        #d3{
+            margin: 0 1rem 0 1rem;
+        }
+        #l1,#l2,#l3,#l4,#lmo{
+            color: red;
+            font-size: 1.7rem;
+            position: absolute;
+            margin-left: 3rem;
+        }
+        #t1,#t2{
+            height: auto;
+            width: 95%;
+            margin: 6rem 0 0 5%;
+        }
+        #t2{
+            margin-top: 2rem;
+        }
+        #t2 td{
+            text-align: center;
+        }
+        #td1{
+            width: 15%;
+        }
+        #td3{
+            width: 20%;
+        }
+        #tdm{
+            width: 5%;
+        }
+        #td2{
+            width: 30%;
+        }
+        #un,#ur,#u_r,#mode,#mo,#ul,#s1,#s2{
+            width: 80%;
+            height: 3.5rem;
+            font-size: 1.5rem;
+            border-radius: .5rem;
+            padding:0 1rem 0 1rem;
+        }
+        #s1,#s2{
+            width: 65%;
+        }
+        #ch1,#ch2{
+            margin-left: 2rem;
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+        #b1,#b2,#b3,#b4,#b5,#b6,#bb1,#bb2{
+            height: 3.9rem;
+            width: 15rem;
+            border-radius: 1rem;
+            background-color: green;
+            color: whitesmoke;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        #b2,#b4{
+            margin-left: 7rem;
+            background-color: red;
+        }
+        #b5{
+            margin-right: 5%;
+        }
+        #b6{
+            margin-right: 5%;
+            background-color: red;
+        }
+        #un,#mo{
+            text-transform: capitalize;
+        }
+        #u_r{
+            text-transform: uppercase;
+        }
+        option{
+            text-align: center;
+        }
+        #d32{
+            width: 100%;
+        }
+        #t3{
+            width: 100%;
+            font-size: 1.8rem;
+            overflow-y: auto;
+        }
+        #t3,#t3 th,#t3 td{
+            border: .1rem solid white;
+            border-collapse:collapse;
+            text-align: center;
+        }
+        #t3 td{
+            background-color: rgb(224, 213, 193);
+        }
+        #t3 th{
+            background-color: #647ae7;
+        }
+        #t3 tr{
+            height: 3rem;
+        }
+        #th1,#th2,#th3{
+            width: 20%;
+        }
+        #th4{
+            width: 34%;
+        }
+        #th5{
+            width: 6%;
+        }
+        @media screen and (max-width: 600px) {
+            #p02{
+                font-size: 1.7rem;
+            }
+            #b3,#b4{
+                margin-top: 3rem;
+            }
+            #t2 select{
+                width: 60%;
+            }
+            #d1,#d10{
+                text-align: left;
+                padding-left: 3rem;
+            }
+            #t2 thead,#t3 thead {
+            clip: rect(0 0 0 0);
+            position: absolute;
+            display: none;
+            }
+            #t2 td,#t3 td {
+                height: 7rem;
+            display: block;
+            font-size: .8em;
+            text-align: right;
+            }
+            #t3 td{
+                font-size: 2.5rem;
+                height: 3rem;
+            }
+            #t3 #rr2{
+                color: white;
+                background-color: white;
+            }
+            #r1,#b5,#b6{
+                display: none;
+            }
+            #t2 td::before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            color: white;
+            }
+            #t3 td::before {
+            content: attr(data-label);
+            font-size: 2rem;
+            float: left;
+            font-weight: bold;
+            color: black;
+            }
+        }
+        #home{
+            float:right;
+            font-size: 2rem;
+            text-decoration: none;
+            margin: -4rem 4rem 0 0;
+            color: white;
+        }
+        #dia h2{
+            font-size: 3rem;
+        }
+        #dia p{
+            font-size: 2rem;
+        }
+
+    </style>
+    </head>
+    <body hidden oncontextmenu="return false;" style="user-select: none;">
+        <!-- ------------------------------------ -->
+        <dialog id="dia" style="margin-top: 20rem;">
+            <form>
+                <h2 style="color: red; text-align: center;"> Important Notice!</h2>
+                <p>Please note down University name before deletion, if you want to update??</p>
+                <p><input type="checkbox" id="c1"> &nbsp; &nbsp; Select for delete University Details</p> 
+                <p><input type="checkbox" id="c2"> &nbsp; &nbsp; Select for delete Program Details of this University</p> 
+                <p style="text-align: center;"><input type="button" value="Delete" id="bb1" style="background-color: red;"> &nbsp; &nbsp; <input type="reset" value="Cancel" id="bb2"></p>
+            </form>
+        </dialog>
+        <!-- --------------------------------------------------- -->
+        <div id="body">
+            <div style="background-image: linear-gradient(to right,#FFCF71,#2376DD);">
+                <div id="d0">
+                    <div id="d01"><img id="i01" src="LOGO-removebg-preview.png" alt="Loading...."></div><div id="d02"><p id="p02"><b>EDUINFO &nbsp; Educational &nbsp; Consultancy</b></p></div>
+                </div>
+                <button id="entry" class="b1"><b>Entry</b></button><button id="service" class="b1"><b>Service</b></button>
+            </div>
+            <div id="ent">
+                <div id="d1"><h2><b>FILL &nbsp; UNIVERSITY &nbsp; DETAILS</b></h2><a href="dashboard.html" id="home"><font size="4rem">&#x1F3E0;</font> HOME</a></div>
+                <div id="d2">
+                    <div id="d21"><label for="brch">Brochure : </label><input type="file" id="brch" accept=".pdf" title="UPLOAD BROCHURE" onchange="pd1('#brch')"></div>
+                    <div id="d22"><label for="pros">Porspectus : </label><input type="file" id="pros" accept=".pdf" title="UPLOAD PROSPECTUS" onchange="pd2('#pros')"></div>
+                    <div id="d23"><label for="adfo">Admission Form : </label><input type="file" id="adfo" accept=".pdf" title="UPLOAD ADMISSION FORM" onchange="pd3('#adfo')"></div>
+                </div>
+                <div id="d3">
+                    <form>
+                        <table id="t1">
+                            <tr>
+                                <td id="td1"><label for="un">University &nbsp; Name : </label></td>
+                                <td id="td2"><input type="text" id="un" onfocus="clr1('#un')" onfocusout="chk1('#un')" placeholder="Enter university name"><br><label id="l1"></label></td>
+                                <td id="tdm"></td>
+                                <td id="td3"><label for="ur">University &nbsp; Recogintion : </label></td>
+                                <td id="td2"><select id="ur" onfocusout="chk2('#u_r','#l2')" onfocus="clr2('#u_r','#l2')">
+                                    <option value="" hidden>-----Select any one-----</option>
+                                    <option value="AICTE">All India Council of Technical Education (AICTE)</option>
+                                    <option value="UGC">UniversityGrants Commission (UGC)</option>
+                                    <option value="MCI">Medical Council of India (MCI)</option>
+                                    <option value="ICAR">India Council for Agricultural (ICAR)</option>
+                                    <option value="NCTE">National Council for Teacher Education (NCTE)</option>
+                                    <option value="DCI">Dental Council (DCI)</option>
+                                    <option value="PCI">Pharmacy Council of India (PCI)</option>
+                                    <option value="INC">Indian Council of India (INC)</option>
+                                    <option value="BCI">Bar Council of India (BCI)</option>
+                                    <option value="CCH">Central Council of Homeopathy (CCH)</option>
+                                    <option value="CCIM">Central Council for Indian Medicine (CCIM)</option>
+                                    <option value="Council of Architecture">Council of Architecture</option>
+                                    <option value="Rehabilitation Council">Rehabilitation Council</option>
+                                    <option value="NCRI">National Council for Rural Institutes (NCRI)</option>
+                                    <option value="SCHE">State Councils of Higher Education (SCHE)</option>
+                                </select><br><label id="l2"></label></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td><td></td>
+                                <td></td>
+                                <td><br><input type="text" id="u_r" readonly><input type="checkbox" id="ch1" onclick="ch('#ch1','#u_r')"> &nbsp;<label for="ch1" style="font-size: 1.5rem;">Edit</label></td>
+                            </tr>
+                            <tr>
+                                <td><label for="mode">Mode : </label></td>
+                                <td><select id="mode" onfocusout="chk2('#mo','#l3')" onfocus="clr2('#mo','#l3')">
+                                    <option value="" selected disabled>-----Select any Mode-----</option>
+                                </select><br><label id="l3"></label></td><td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><br><input type="text" id="mo" readonly><!-- <input type="checkbox" id="ch2" onclick="ch('#ch2','#mo')"> &nbsp;<label for="ch2" style="font-size: 1.5rem;">Edit</label><br><label id="lmo"></label></td> --><td></td>
+                                <td><label for="ul">University &nbsp;Website &nbsp;Link : </label></td>
+                                <td><input type="text" id="ul" onfocusout="chk1('#ul')" onfocus="clr1('#ul')" placeholder="University link"><br><label id="l4"></label></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;" colspan="5"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="button" id="b1" value="Submit"><input type="Reset" id="b2"></td>
+                            </tr>
+                        </table><br><br>
+                    </form>
+                </div>
+            </div>
+            <div id="ser" hidden>
+                <div id="d10"><h2><b>UNIVERSITY &nbsp; SERVICE &nbsp; FORM</b></h2><a href="dashboard.html" id="home"><font size="4rem">&#x1F3E0;</font> HOME</a></div>
+                <div id="d3">
+                    <form>
+                        <table id="t2">
+                            <thead>
+                                <tr>
+                                    <th id="td1"><label for="s1"><b>University Name : </b></label></th>
+                                    <th id="td1"><label for="s2"><b>Mode Name : </b></label></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="University &nbsp; Name : "><select id="s1"><option value="" selected disabled>-----Select a University-----</option></select></td>
+                                    <td data-label="Mode &nbsp; Name : "><select id="s2"><option value="" selected disabled>-----Select a Mode-----</option></select></td>
+                                </tr>
+                            </tbody>
+                            <!-- <tr>
+                                <td colspan="2" style="text-align: center;"><br><br><input type="button" value="Search" id="b3"><input type="button" value="Refresh" id="b4"></td>
+                            </tr> -->
+                        </table><br><br>
+                        <div style="text-align: center;"><input type="button" value="Search" id="b3"><input type="button" value="Refresh" id="b4"></div>
+                    </form>
+                    <div id="d32">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            var role=localStorage.getItem('role').trim();
+            $(document).ready(function(){
+                if(role=='0' || role=='1')
+                    $('body').show();
+                else if(role=='2' || role=='3'){
+                    $('body').show();
+                    $('#ent').hide();
+                    $('#ser').show();
+                    $('#entry').hide();
+                    $('#service').hide();
+                    load1();
+                }
+                else{
+                    $('body').hide();
+                    window.location.href='index.html'
+                }
+            })
+            // ------------------------------------------------------------- Hide Show ----------------------------------------------------
+            flag=true
+            $('#entry').click(function(){
+                $('#ent').show();
+                $('#ser').hide();
+                $(this).css({'background-color':'#243949','color':'white'});
+                $('#service').css({'background-color':'#f7deac','color':'black'});
+                $(this).prop('disabled',true);
+                $('#service').prop('disabled',false);
+            });
+            $('#service').click(function(){
+                $('#ent').hide();
+                $('#ser').show();
+                $(this).css({'background-color':'#243949','color':'white'});
+                $('#entry').css({'background-color':'#f7deac','color':'black'});
+                $(this).prop('disabled',true);
+                $('#entry').prop('disabled',false);
+            });
+// ##############################################################  Entery Form  ############################################################
+// --------------------------------------------------- Mandatory ------------------------------------------------------------
+            function chk1(t){
+                $('#l1').html('')
+                a=$(t).val();
+                if (a.trim()==''){
+                    $(t).val('Field is mandatory!');
+                    $(t).css({'color':'red','border':'.1rem solid red'})
+                    flag=false;
+                }
+                else if(a=='Field is mandatory!'){
+                    $(t).css({'color':'red','border':'.1rem solid red'})
+                    flag=false;
+                }
+                if (t=='#ul' && a.trim()!=''){
+                    if(a.charAt(a.length-3)=='.' || a.charAt(a.length-4)=='.')
+                        $('#l4').html('')
+                    else{
+                        $('#l4').html('Incorect Website Link!');
+                        flag=false
+                    }
+                }
+            }
+            function clr1(t){
+                a=$(t).val()
+                if(a=='Field is mandatory!'){
+                    $(t).val('')
+                    $(t).css({'color':'black','border':'.1rem solid black'})
+                }
+            }
+            function chk2(t,l){
+                a=$(t).val()
+                if (a.trim()==''){
+                    $(l).html('Please select any one!')
+                    flag=false
+                }
+            }
+            function clr2(t,l){
+                $(l).html('')
+            }
+            // -----------------------------------------------------------------------------------------------------------------
+            $('#mode').on('change',function(){
+                $('#mo').val($(this).val())
+            })
+            $('#ur').on('change',function(){
+                a=$('#ur option:selected').val()
+                b=$('#u_r').val()
+                $('#u_r').val(b+a+',')
+                $('#ur option:selected').detach()
+            })
+            // -----------------------------------------------------------------------------------------------------------------
+            function ch(t,l){
+                a=$(t).is(':checked')
+                if(a==true){
+                    $(l).attr('readonly',false)
+                }
+                else if(a==false)
+                    $(l).attr('readonly',true)
+            }
+
+            // ----------------------------------------------------------------------------------------------------------------
+            // ----------------------------------------------- validation -----------------------------------------------------
+            $('input').on('keydown',function(a){
+                if (a.which==8){
+                    $('#l1').html('')
+                    $('#l2').html('')
+                    $('#l3').html('')
+                    $('#l4').html('')
+                    $('#lmo').html('')
+                }
+                else if(a.which==13)
+                    $('#b1').click()
+            })
+            $('#un').on('keypress',function(a){
+                $('#l1').html('')
+                if(!(a.which>=65 && a.which<=90 || a.which>=97 && a.which<=122 || a.which==32 || a.which==13)){
+                    $('#l1').html('Only alphabate allowed');
+                    return false;
+                }
+                else if(a.which==32 && a.target.selectionStart==0){
+                    $('#l1').html('Space at first not allowed');
+                    return false;
+                }
+                else if(a.which==32 && $(this).val().slice(-1)==' '){
+                    $('#l1').html('Multiple space not allowed')
+                    a.preventDefault();
+                }
+            })
+            $('#mo').on('keypress',function(a){
+                $('#lmo').html('')
+                if(!(a.which>=65 && a.which<=90 || a.which>=97 && a.which<=122 || a.which==32)){
+                    $('#lmo').html('Only alphabate allowed');
+                    return false;
+                }
+                else if(a.which==32 && a.target.selectionStart==0){
+                    $('#lmo').html('Space at first not allowed');
+                    return false;
+                }
+                else if(a.which==32 && $(this).val().slice(-1)==' '){
+                    $('#lmo').html('Multiple space not allowed')
+                    a.preventDefault();
+                }
+            })
+            $('#u_r').on('keypress',function(a){
+                if(!(a.which>=65 && a.which<=90 || a.which>=97 && a.which<=122 || a.which==32)){
+                    return false;
+                }
+                else if(a.which==32 && a.target.selectionStart==0){
+                    return false;
+                }
+                else if(a.which==32 && $(this).val().slice(-1)==' '){
+                    a.preventDefault();
+                }
+            })
+            // -------------------------------------------------------------------------------------------------------------
+            // ----------------------------------------------------- Pdf ----------------------------------------------------
+            var broch;
+            var pros;
+            var a_f;
+            function pd1(x){
+                var a=new FileReader();
+                a.readAsDataURL($(x)[0].files[0]);
+                a.onload = function (e) {
+                broch=e.target.result;
+                };
+            }
+            function pd2(x){
+                var a=new FileReader();
+                a.readAsDataURL($(x)[0].files[0]);
+                a.onload = function (e) {
+                pros=e.target.result;
+                };
+            }
+            function pd3(x){
+                var a=new FileReader();
+                a.readAsDataURL($(x)[0].files[0]);
+                a.onload = function (e) {
+                a_f=e.target.result;
+                };
+            }
+            // -------------------------------------------------------------------------------------------------------------
+            // ----------------------------------------------------- Entery ------------------------------------------------
+                $('#b1').on('click',function(){
+                    flag=true;
+                    chk1('#un')
+                    chk1('#ul')
+                    chk2('#mo','#l3')
+                    chk2('#u_r','#l2')
+                    if(flag){
+                        a=$('#un').val()
+                        b=$('#mo').val()
+                        c=$('#u_r').val()
+                        if(c.charAt(c.length-1)==',')
+                            c=c.substr(0,c.length-1)
+                        d=$('#ul').val()
+                        var log=confirm('Are you sure want to insert this')
+                        if (log)
+                        $.ajax({
+                            url:'uni_info.py',
+                            method:'post',
+                            data:{
+                                t:'ent',
+                                t1:a,
+                                t2:b,
+                                t3:c,
+                                t4:d,
+                                t5:broch,
+                                t6:pros,
+                                t7:a_f
+                            },
+                            success:function(data){
+                                alert(data)
+                                window.location.reload()
+                            }
+                        })
+                    }
+                })
+                // ---------------------------------------------------------------------------------------------------------------------------
+                // ---------------------------------------------------- Clear ------------------------------------------------------------------
+                $('#b2').on('click',function(){
+                    window.location.reload()
+                })
+                $('#un').on('focusout',function(){
+                    a=$('#un').val()
+                    if (a.trim()!='')
+                    $.ajax({
+                        url:'uni_info.py',
+                        method:'post',
+                        data:{
+                            t:'load',
+                            t1:a
+                        },
+                        success:function(data){
+                            $('#mode').html('<option value="" selected disabled>-----Select any Mode-----</option>')
+                            $('#mode').append(data)
+                        }
+                    })
+                })
+
+            // ---------------------------------------------------------------------------------------------------------------------------
+            // ############################################################ Service Form #################################################
+            function load1(){
+                $.ajax({
+                    url:'uni_info.py',
+                    method:'post',
+                    data:{
+                        t:'click'
+                    },
+                    success:function(data){
+                        data=data.split(',,,')
+                        $('#s1').append(data[0])
+                        $('#s2').append(data[1])
+                    }
+                })
+            }
+            $('#service').on('click',function(){
+                $('#s1').html('<option value="" selected disabled>-----Select a University-----</option>')
+                $('#s2').html('<option value="" selected disabled>-----Select a Mode-----</option>')
+                    load1()
+            })
+            $('#s1').on('change',function(){
+                a=$('#s1').val()
+                $.ajax({
+                    url:'uni_info.py',
+                    method:'post',
+                    data:{
+                        t:'click1',
+                        t1:a
+                    },
+                    success:function(data){
+                        $('#s2').html('<option value="" selected disabled>-----Select a Mode-----</option>')
+                        $('#s2').append(data)
+                    }
+                })
+            })
+            $('#b4').on('click',function(){
+                $('#s1').html('<option value="" selected disabled>-----Select a University-----</option>')
+                $('#s2').html('<option value="" selected disabled>-----Select a Mode-----</option>')
+                load1()
+                $(this).prop('disabled',true)
+                $('#d32').html('')
+            })
+            // ------------------------------------------------------- Search --------------------------------------------------------------
+            $('#b3').on('click',function(){
+                $('#b4').prop('disabled',false)
+                a=$('#s1').val()
+                b=$('#s2').val()
+                if(a==null && b==null)
+                    alert('Please select any one')
+                else
+                    $.ajax({
+                        url:'uni_info.py',
+                        method:'post',
+                        data:{
+                            t:'search',
+                            t1:a,
+                            t2:b
+                        },
+                        success:function(data){
+                            $('#d32').html(data)
+                            if(role=='2' || role=='3'){
+                                $('#b5').hide();
+                                $('#b6').hide();
+                                $('.rr1').text('')
+                            }
+                        }
+                    })
+            })
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // ----------------------------------------------------- Update ----------------------------------------------------------------------
+            $(document).on('blur','#e',function(){
+                a=$(this).text()
+                $(this).text(a+"   ")
+            });
+            $(document).on('focus','#e',function(){
+                a=$(this).text().trim()
+                $(this).text(a)
+            })
+            $(document).on('click','#b5',function(){
+                var cell=$('input[name="r"]:checked').closest('tr').children("td").text().split('   ');
+                a=cell[0];
+                b=cell[1];
+                c=cell[2];
+                d=cell[3];
+                if (a=='')
+                    alert('Please select any one')
+                else
+                    var log=confirm('Are you sure want to update this')
+                    if(log)
+                    $.ajax({
+                        url:'uni_info.py',
+                        method:'post',
+                        data:{
+                            t:'update',
+                            t1:a,
+                            t2:b,
+                            t3:c,
+                            t4:d
+                        },
+                        success:function(data){
+                            alert(data)
+                        }
+                    })
+            })
+            // -------------------------------------------------------------------------------------------------------------------------------
+            // -------------------------------------------------------------- Delete --------------------------------------------------------
+            var diag;
+            $('#bb2').on('click',function(){
+                diag.close()
+            })
+            $('#body').click(function(){
+                $('#bb2').click()
+            })
+            $(document).on('click','#b6',function(){
+                var cell=$('input[name="r"]:checked').closest('tr').children("td").text().split('   ');
+                a=cell[0];
+                if (a=='')
+                    alert('Please select any one')
+                else{
+                    diag=document.getElementById('dia')
+                    diag.show();
+                }
+                    // var log=confirm('                           Important Notice! \n\n Please note down University name before deletion, if you want to update?? \n\n Are you sure want to delete university details??')
+                    // if(log)
+                    // $.ajax({
+                    //     url:'uni_info.py',
+                    //     method:'post',
+                    //     data:{
+                    //         t:'delete',
+                    //         t1:a,
+                    //         t2:b
+                    //     },
+                    //     success:function(data){
+                    //         alert(data)
+                    //         $('input[name="r"]:checked').closest('tr').remove()
+                    //     }
+                    // })
+            })
+            $(document).on('click','#bb1',function(){
+                var c;
+                x=$('#c1').is(':checked')
+                y=$('#c2').is(':checked')
+                if (y==true)
+                    c='yes'
+                else
+                    c='no'
+                if(x){
+                    var cell=$('input[name="r"]:checked').closest('tr').children("td").text().split('   ');
+                    a=cell[0];
+                    b=cell[1];
+                    $.ajax({
+                            url:'uni_info.py',
+                            method:'post',
+                            data:{
+                                t:'delete',
+                                t1:a,
+                                t2:b,
+                                t3:c
+                            },
+                            success:function(data){
+                                alert(data)
+                                $('input[name="r"]:checked').closest('tr').remove()
+                                $('#bb2').click();
+                            }
+                    })
+                }
+                else
+                    alert('Please Check the box!')
+            })
+            // -------------------------------------------------------------------------------------------------------------------------------
+        </script>
+    </body>
+</html>

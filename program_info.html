@@ -1,0 +1,982 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Details</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <style>
+        html{
+            font-size: 10px;
+        } 
+        @media(max-width:998px) {
+            html {
+                font-size: 55%;
+            }
+        }
+        @media(max-width:768px) {
+            html {
+                font-size: 45%;
+            }
+        }
+        body{
+            background-color: #243949;
+            /* background-color: white; */
+        }
+        #body{
+            margin: -1rem -1rem 0 -1rem;
+            height: auto;
+            width: auto;
+        }
+        #d0{
+            height: 7rem;
+        }
+        #d01,#d02{
+            float: left;
+            margin-left: 3rem;
+            height: 7rem;
+            height: 7rem;
+        }
+        #d01{
+            width: 7rem;
+        }
+        #i01{
+            height: 100%;
+            width: 100%;
+        }
+        #p02{
+            font-size: 3rem;
+            margin-top: 2rem;
+        }
+        .b1{
+            height: 5rem;
+            width: 20rem;
+            font-size: 2rem;
+            border-radius: 2rem 2rem 0 0;
+            margin-left: 2rem;
+            background-color: #f7deac;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+        #entry{
+            background-color: #243949;
+            color: white;
+        }
+        #ent,#ser{
+            height: 30rem;
+            background-color: #243949;
+        }
+        h2{
+            font-size: 2.5rem;
+            color: white;
+            height: 2.2rem;
+            margin-top: .8rem;
+        }
+        #d1,#d10{
+            border: .1rem solid blue;
+            text-align: center;
+            border-radius: 1rem;
+            margin: 2rem 1rem 0 1rem;
+            background-color: #447dac;
+        }
+        #d10{
+            background-color: rgb(125, 82, 118);
+        }
+        label{
+            font-size: 2rem;
+            color: white;
+        }
+        #t1{
+            height: auto;
+            width: 95%;
+            margin: 3rem 0 0 5%;
+        }
+        #t1 tr{
+            height: 6.5rem;
+        }
+        #td1{
+            width: 16%;
+        }
+        #td3{
+            width: 8%;
+        }
+        #td2{
+            width: 30%;
+        }
+        #t1 input,#t1 select{
+            width: 80%;
+            height: 3.5rem;
+            font-size: 1.5rem;
+            border-radius: .5rem;
+            padding:0 1rem 0 1rem;
+        }
+        option{
+            text-align: center;
+        }
+        textarea{
+            height: 5.5rem;
+            width: 80%;
+            resize: none;
+            padding:0 1rem 0 1rem;
+            font-size: 1.5rem;
+            border-radius: .5rem;
+        }
+        #b1,#b2,#b3,#b4,#b5,#b6,#b8{
+            border-radius: 1rem;
+            background-color: green;
+            color: whitesmoke;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        #b1,#b2{
+            font-size: 3rem;
+        }
+        #b3,#b4,#b5,#b6{
+            height: 3.9rem;
+            width: 15rem;
+        }
+        #b4,#b6{
+            background-color: red;
+            margin-left: 7rem;
+        }
+        #b6{
+            margin-right: 5rem;
+        }
+        #b2{
+            background-color: red;
+            margin-left:3rem; 
+        }
+        #l1,#l2,#l3,#l4,#l5,#l6,#l7,#l8,#l9,#l10,#l11{
+            color: red;
+            font-size: 1.7rem;
+            position: absolute;
+            margin-left: 3rem;
+        }
+        #t2 th,#t2 td{
+            text-align: center;
+        }
+        #t2{
+            width: 90%;
+            margin:2rem 0 0 5%;
+            table-layout: fixed;
+        }  
+        #t2 tr{
+            height: 5rem;
+        }
+        #t2 select{
+            width: 80%;
+            height: 3.5rem;
+            font-size: 1.5rem;
+            border-radius: .5rem;
+            padding:0 1rem 0 1rem;
+        }
+        #t3{
+            border: 1px solid white;
+            border-collapse: collapse;
+            margin: 2rem 0 3rem 0;
+            padding: 0;
+            width: 99.5%;
+            table-layout: fixed;
+        }
+        #t3 th{
+            border: 1px solid white;
+            background-color: #647ae7;
+        }
+        #t3 td{
+            border: 1px solid white;
+            text-align: center;
+            background-color: rgb(224, 213, 193);
+        }
+        #b7{
+            width: 8rem;
+            font-size: 2rem;
+            border-radius: 1rem;
+            background-color: greenyellow;
+            border:.01rem solid black inset;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 600px) {
+            #p02{
+                font-size: 1.7rem;
+            }
+            /* It is used to set margin for mobile view */
+            #b3,#b4{  
+                margin-top: 3rem;
+            }
+            #t2 select{
+                width: 60%;
+            }
+            /* left align for heading */
+            #d1,#d10{
+                text-align: left;
+                padding-left: 3rem;
+            }
+            #t2 thead,#t3 thead {
+            /* clip: rect(0 0 0 0); */
+            /* position: absolute; */
+                display: none;
+            }
+            #t2 td,#t3 td {
+                height: 7rem;
+            display: block;
+            font-size: .8em;
+            text-align: right;
+            }
+            #t3 td{
+                font-size: 2.5rem;
+                height: 3rem;
+            }
+            #t3 #rr2{
+                background-color: white;
+            }
+            #r1,#b5,#b6{
+                display: none;
+            }
+            /* set td label in left */
+            #t2 td::before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            color: white;
+            }
+            #t3 td::before {
+            content: attr(data-label);
+            font-size: 2rem;
+            float: left;
+            font-weight: bold;
+            color: black;
+            }
+        }
+        #t4{
+            height: auto;
+            width: 100%;
+            border-collapse:collapse;
+            text-align: center;
+            color: black;
+        }
+        #t4,#t4 td,#t4 th{
+            border: .1rem solid black;
+        }
+        #home{
+            float:right;
+            font-size: 2rem;
+            text-decoration: none;
+            margin: -4rem 4rem 0 0;
+            color: white;
+        }
+        #hh2{
+            color: black;
+        }
+        #body1 div{
+            float: left;
+            height: 6rem;
+            width: 6rem;
+            border-radius: 20%;
+            margin:3rem 5rem 0 0;
+            cursor: pointer;
+            font-size: 5rem
+        }
+        #w1{
+            background-color: green;
+        }
+        #w1 i{
+            margin:.4rem 0 0 1rem;
+            color: white;
+        }
+        #p1{
+            background-color: rgb(63, 61, 61);
+        }
+        #p1 p{
+            margin: -.8rem 0 0 .8rem;
+            color: white;
+        }
+        #m1{
+            background-color: rgb(203, 124, 173);
+        }
+        #m1 p{
+            margin: -.8rem 0 0 .6rem;
+            color: black;
+        }
+        #b8{
+            margin: 5rem 0 0 8rem;
+            height: 4rem;
+            width: 15rem;
+            font-size: 2.5rem;
+        }
+        #t4 tr{
+            height: 6rem;
+        }
+        #t4 th{
+            background-color: rgb(228, 223, 223);
+            /* background-color: blue; */
+        }
+        @media print{
+            body {-webkit-print-color-adjust: exact;}
+            #p1,#w1,#m1,#b8{
+                display: none;
+            }
+        }
+    </style>
+    </head>
+    <body hidden oncontextmenu="return false;" style="user-select: none;">
+        <div id="body">
+            <div style="background-image: linear-gradient(to right,#FFCF71,#2376DD);">
+                <div id="d0">
+                    <div id="d01"><img id="i01" src="LOGO-removebg-preview.png" alt="Loading...."></div><div id="d02"><p id="p02"><b>EDUINFO &nbsp; Educational &nbsp; Consultancy</b></p></div>
+                </div>
+                <button id="entry" class="b1"><b>Entry</b></button><button id="service" class="b1"><b>Service</b></button>
+            </div>
+            <div id="ent">
+                <div id="d1"><h2><b>FILL &nbsp; PROGRAM &nbsp; DETAILS</b></h2><a href="dashboard.html" id="home"><font size="4rem">&#x1F3E0;</font> HOME</a></div>
+                <div id="d2">
+                    <form>
+                        <table id="t1">
+                            <tr>
+                                <td id="td1"><label for="un"><b>University Name : </b></label></td>
+                                <td id="td2"><select id="un" onfocusout="chk2('#un','#l1')" onfocus="clr2('#un','#l1')"><option value="">-----Select a Universit-----</option></select><br><label id="l1"></label></td>
+                                <td id="td3"></td>
+                                <td id="td1"><label for="mode"><b>Mode : </b></label></td>
+                                <td id="td2"><select id="mode" onfocusout="chk2('#mode','#l2')" onfocus="clr2('#mode','#l2')"><option value="">-----Select a Mode-----</option></select><br><label id="l2"></label></td>
+                            </tr>
+                            <tr>
+                                <td><label for="pn"><b>Program Name : </b></label></td>
+                                <td><input type="text" id="pn" placeholder="Program Name" onfocusout="chk1('#pn','#l3')" onfocus="clr1('#pn')"><br><label id="l3"></label></td>
+                                <td></td>
+                                <td><label for="eli">Eligibility : </label></td>
+                                <td><textarea id="eli" placeholder="Eligibility" onfocusout="chk1('#eli','#l4')" onfocus="clr1('#eli')"></textarea><br><label id="l4"></label></td>
+                            </tr>
+                            <tr>
+                                <td><label for="mind">Min. Duration : </label></td>
+                                <td><select id="mind" onfocusout="chk2('#mind','#l5')" onfocus="clr2('#mind','#l5')">
+                                    <option value="">-----Select a Duration-----</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select><br><label id="l5"></label></td>
+                                <td></td>
+                                <td><label for="maxd">Max. Duration : </label></td>
+                                <td><select id="maxd" onfocusout="chk2('#maxd','#l6')" onfocus="clr2('#maxd','#l6')">
+                                    <option value="">-----Select a Duration-----</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select><br><label id="l6"></label></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="text-align: left;"><input type="checkbox" id="le" style="height: 1.5rem; width: 1.5rem;"><label for="le" style="margin-left: 2rem;">Lateral Entry</label></td>
+                                <td></td>
+                                <td><label>Session : </label></td>
+                                <td><input type="checkbox" id="jan" style="height: 1.2rem; width: 1.2rem;"><label for="jan" style="margin-left: 1.5rem;">Jan</label><input type="checkbox" id="jul" checked style="height: 1.2rem; width: 1.2rem; margin-left: 5rem;"><label for="jul" style="margin-left: 1.5rem;">July</label></td>
+                            </tr>
+                            <tr>
+                                <td><label for="pf" >Program Fee : </label></td>
+                                <td><input type="text" placeholder="Program Fee" inputmode="numeric" id="pf" onkeydown="num('#pf','#l7')" onfocusout="chk1('#pf','#l7')" onfocus="clr1('#pf')"><br><label id="l7"></label></td>
+                                <td></td>
+                                <td><label for="af">Admission Fee : </label></td>
+                                <td><input type="text" id="af" inputmode="numeric" value="0" onkeydown="num('#af','#l8')" onfocusout="chk1('#af','#l8')" onfocus="clr1('#af')"><br><label id="l8"></label></td>
+                            </tr>
+                            <tr>
+                                <td><label for="ef">Exam fee : </label></td>
+                                <td><input type="text" id="ef" inputmode="numeric" value="0" onkeydown="num('#ef','#l9')" onfocusout="chk1('#ef','#l9')" onfocus="clr1('#ef')"><br><label id="l9"></label></td>
+                                <td></td>
+                                <td><label for="sc">Services Charge : </label></td>
+                                <td><input type="text" id="sc" inputmode="numeric" value="0" onkeydown="num('#sc','#l10')" onfocusout="chk1('#sc','#l10')" onfocus="clr1('#sc')"><br><label id="l10"></label></td>
+                            </tr>
+                            <tr>
+                                <td><label for="ra">Referral Amount : </label></td>
+                                <td><input type="text" id="ra" inputmode="numeric" value="0" onkeydown="num('#ra','#l11')" onfocusout="chk1('#ra','#l11')" onfocus="clr1('#ra')"><br><label id="l11"></label></td>
+                                <td></td>
+                                <td><input type="button" id="b1" value="Submit" style="height: 3.9rem; width: 15rem;"></td>
+                                <td><input type="Reset" id="b2" style="height: 3.9rem; width: 15rem;"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <div id="ser" hidden>
+                <div id="d10"><h2><b>PROGRAM &nbsp; SERVICE &nbsp; FORM</b></h2><a href="dashboard.html" id="home"><font size="4rem">&#x1F3E0;</font> HOME</a></div>
+                <div id="d3">
+                    <div id="d31">
+                        <table id="t2">
+                            <thead>
+                                <tr>
+                                    <th><label for="s1"><b>University &nbsp; Name : </b></label></th>
+                                    <th><label for="s2"><b>Course Name : </b></label></th>
+                                    <th><label for="s3"><b>Mode Name : </b></label></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label='University &nbsp; Name : '><select id="s1"><option value="">-----Select University Name-----</option></select></td>
+                                    <td data-label='Course &nbsp; Name : '><select id="s2"><option value="">-----Select a Course-----</option></select></td>
+                                    <td data-label='Mode &nbsp; Name : '><select id="s3"><option value="">-----Select a Mode-----</option></select></td>
+                                </tr>
+                            </tbody>
+                        </table><br><br>
+                        <div style="text-align: center;"><input type="button" value="Search" id="b3"><input type="button" value="Refresh" id="b4"></div>
+                    </div>
+                    <div id="d32">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="body1" hidden>
+            <form id="f1">
+                <table id="t4">
+                    <tr>
+                        <td colspan="3">
+                            <h1 id="hh1">Patliputra</h1>
+                            <h2 id="hh2">AICTE,ADHJ,FGJF</h2>
+                            <a id="lin" href=""><h3 id="hh3">University Link</h3></a>
+                        </td>
+                        <td colspan="4">
+                            <p><a id="broli" class="kl" href="https://raysonline.in/wp-content/uploads/2017/12/Set1.pdf" download="Brochure">Download Brochure</a></p>
+                            <p><a id="proli" class="kl" href="#" download="Porspectus">Download Porspectus</a></p>
+                            <p><a id="afli" class="kl" href="#" download="Admission_Form">Download Admission Form</a></p>
+                            <!-- <iframe src="" id="afli" frameborder="0"></iframe> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2"><b>Mode</b></th>
+                        <th rowspan="2"><b>Course</b></th>
+                        <th rowspan="2"><b>Lateral Entry</b></th>
+                        <th rowspan="2"><b>Eligibility</b></th>
+                        <th rowspan="2"><b>Session</b></th>
+                        <th colspan="2">Duration</th>
+                    </tr>
+                    <tr>
+                        <th>Min Duration</th>
+                        <th>Max Duration</th>
+                    </tr>
+                    <tr>
+                        <td id="mode">Online</td>
+                        <td id="course">BCA</td>
+                        <td id="let">YES</td>
+                        <td id="eligi">10th,12th</td>
+                        <td id="sess">july</td>
+                        <td id="mnd">3</td>
+                        <td id="mxd">4</td>
+                    </tr>
+                    <tr><td colspan="7"></td></tr>
+                    <tr>
+                        <th>Program Fees</th><th>Admission Fees</th><th>Exam Fees</th><th>Service Fees</th><th>Total</th><th>Discount</th><th>Payable Amount</th>
+                    </tr>
+                    <tr>
+                        <td id="prog">45000</td><td id="adim">15000</td><td id="exam">1500</td><td id="serv">700</td><td id="tot">62200</td><td id="dis" contenteditable="true"></td><td id="pay">62200</td>
+                    </tr>
+                </table><br><br><br>
+                <div id="p1" onclick="window.print()"><p>&#x1F5B6;</p></div><a href="https://wa.me/?text=Hii"><div id="w1"><i class="fa fa-whatsapp"></i></div></a> <a href=""><div id="m1"><p>&#9993;</p></div></a>
+                <input type="button" value="Close" id="b8">
+            </form>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            var role=localStorage.getItem('role').trim();
+            $(document).ready(function(){
+                if(role=='0' || role=='1')
+                    $('body').show();
+                else if(role=='2' || role=='3'){
+                    $('body').show();
+                    $('#ent').hide();
+                    $('#ser').show();
+                    $('#entry').hide();
+                    $('#service').hide();
+                    load1();
+                }
+                else{
+                    $('body').hide();
+                    window.location.href='index.html'
+                }
+            })
+            // ---------------------------------------------------- Hide Show --------------------------------------------------
+            $('#entry').click(function(){
+                $('#ent').show();
+                $('#ser').hide();
+                $(this).css({'background-color':'#243949','color':'white'})
+                $('#service').css({'background-color':'#f7deac','color':'black'})
+                $(this).prop('disabled',true);
+                $('#service').prop('disabled',false);
+            });
+            $('#service').click(function(){
+                $('#ent').hide();
+                $('#ser').show();
+                $(this).css({'background-color':'#243949','color':'white'})
+                $('#entry').css({'background-color':'#f7deac','color':'black'})
+                $(this).prop('disabled',true);
+                $('#entry').prop('disabled',false);
+            });
+            $(document).ready(function(){
+                if(window.screen.width<=600){
+                    $('#t3 td').attr('contenteditable',false)
+                }
+            })
+            // ###################################################### Entery Form #############################################################
+            // --------------------------------------------------- Mandatory ------------------------------------------------------------------
+            flag=true
+            function chk1(t,l){
+                $(l).html('')
+                a=$(t).val()
+                if(a.trim()==''){
+                    $(t).val('Field is mandatory!');
+                    $(t).css({'color':'red','border':'.1rem solid red'})
+                    flag=false;
+                }
+                else if(a=='Field is mandatory!'){
+                    $(t).css({'color':'red','border':'.1rem solid red'})
+                    flag=false;
+                }
+            }
+            function clr1(t){
+                a=$(t).val()
+                if(a=='Field is mandatory!'){
+                    $(t).val('')
+                    $(t).css({'color':'black','border':'.1rem solid black'})
+                }
+            }
+            function chk2(t,l){
+                if($(t).val()==''){
+                    $(t).css('border','.1rem solid red')
+                    $(l).html('Select any one!')
+                    flag=false
+                }
+            }
+            function clr2(t,l){
+                $(t).css('border','.1rem solid black')
+                $(l).html('')
+            }
+            // --------------------------------------------------- Validation ----------------------------------------------------------------
+            function num(t,l){
+                $(l).html('')
+                $(t).on('keypress',function(a){
+                    if(!(a.which>=48 && a.which<=57 || a.which==13)){
+                        $(l).html('Only digit allowed')
+                        return false
+                    }
+                    if (t=='#pf')
+                        if(a.which==48 && a.target.selectionStart==0){
+                        $(l).html('Digit at first not allowed')
+                            return false
+                        }
+                    if(t=='#af' || t=='#ef' || t=='#sc' || t=='#ra'){
+                        b=$(t).val();
+                        if(b.length==1 && b.charCodeAt(0)==48)
+                            $(t).val('')
+                    }
+                })
+            }
+            $('#pn').on('keypress',function(a){
+                $('#l3').html('')
+                if(!(a.which>=65 && a.which<=90 || a.which>=97 && a.which<=122 || a.which==32 || a.which==46 || a.which==13 || a.which==45 || a.which==40 || a.which==41)){
+                    $('#l3').html('This is not allowed!');
+                    return false;
+                }
+                else if((a.which==32 || a.which==46 || a.which==45 || a.which==40 || a.which==41) && a.target.selectionStart==0){
+                    $('#l3').html('Only alphabate at first allowed!');
+                    return false;
+                }
+                else if(a.which==32 && $(this).val().slice(-1)==' '){
+                    $('#l3').html('Multiple space not allowed')
+                    a.preventDefault();
+                }
+                else if(a.which==46 && $(this).val().slice(-1)=='.'){
+                    $('#l3').html('Multiple dot not allowed')
+                    a.preventDefault();
+                }
+                else if(a.which==45 && $(this).val().slice(-1)=='-'){
+                    $('#l3').html('Multiple - not allowed')
+                    a.preventDefault();
+                }
+                else if(a.which==40 && $(this).val().slice(-1)=='('){
+                    $('#l3').html('Multiple ( not allowed')
+                    a.preventDefault();
+                }
+                else if(a.which==41 && $(this).val().slice(-1)==')'){
+                    $('#l3').html('Multiple ) not allowed')
+                    a.preventDefault();
+                }
+            })
+            $('#eli').on('keypress',function(a){
+                $('#l4').html('')
+                if(!(a.which>=65 && a.which<=90 || a.which>=97 && a.which<=122 || a.which>=48 && a.which<=57 || a.which==32 || a.which==46 || a.which==13 || a.which==45 || a.which==40 || a.which==41)){
+                    $('#l4').html('This is not allowed!');
+                    return false;
+                }
+                else if((a.which==32 || a.which==46 || a.which==45 || a.which==40 || a.which==41) && a.target.selectionStart==0){
+                    $('#l4').html('Only alphabate at first allowed!');
+                    return false;
+                }
+                else if(a.which==32 && $(this).val().slice(-1)==' '){
+                    $('#l4').html('Multiple space not allowed')
+                    a.preventDefault();
+                }
+                else if(a.which==46 && $(this).val().slice(-1)=='.'){
+                    $('#l4').html('Multiple dot not allowed')
+                    a.preventDefault();
+                }
+                else if(a.which==45 && $(this).val().slice(-1)=='-'){
+                    $('#l4').html('Multiple - not allowed')
+                    a.preventDefault();
+                }
+                else if(a.which==40 && $(this).val().slice(-1)=='('){
+                    $('#l4').html('Multiple ( not allowed')
+                    a.preventDefault();
+                }
+                else if(a.which==41 && $(this).val().slice(-1)==')'){
+                    $('#l4').html('Multiple ) not allowed')
+                    a.preventDefault();
+                }
+            })
+            $('#pn,#eli').keydown(function(a){
+                if(a.which==8)
+                    $('#l3,#l4').html('')
+            })
+            $('input').keypress(function(a){
+                if (a.which==13)
+                    $('#b1').click()
+            })
+            // ------------------------------------------------------------------------------------------------------------------------------
+            function maxmin(){
+                a=$('#mind').val()
+                b=$('#maxd').val()
+                if(b!='' && a!='' && parseInt(b)<parseInt(a)){
+                    alert("Max duration can't be less then min duration")
+                    flag=false
+                }
+            }
+            $('#mind').on('focusout',function(){
+                maxmin()
+            })
+            $('#maxd').on('focusout',function(){
+                maxmin()
+            })
+            var ses;
+            function session(){
+                a=$('#jan').is(':checked')
+                b=$('#jul').is(':checked')
+                if(a==true && b==true)
+                    ses='Jan,July'
+                else if(a==true && b==false)
+                    ses='Jan'
+                else if(a==false && b==true)
+                    ses='July'
+                else{
+                    alert('Please checked session!')
+                    flag=false
+                }
+            }
+            // --------------------------------------------- Ready -----------------------------------------------------------
+            $(document).ready(function(){
+                $.ajax({
+                    url:'uni_info.py',
+                    method:'post',
+                    data:{
+                        t:'load1'
+                    },
+                    success:function(data){
+                        $('#un').append(data)
+                    }
+                })
+            })
+            $('#un').on('change',function(){
+                a=$('#un').val()
+                $.ajax({
+                    url:'uni_info.py',
+                    method:'post',
+                    data:{
+                        t:'click1',
+                        t1:a
+                    },
+                    success:function(data){
+                        $('#mode').html('<option value="">-----Select a Mode-----</option>')
+                        $('#mode').append(data)
+                    }
+                })
+            })
+            // --------------------------------------------------------- Entery --------------------------------------------------------------
+            $('#b1').on('click',function(){
+                flag=true
+                chk2('#un','#l1')
+                chk2('#mode','#l2')
+                chk2('#mind','#l5')
+                chk2('#maxd','#l6')
+                chk1('#pn','#l3')
+                chk1('#eli','#l4')
+                chk1('#pf','#l7')
+                chk1('#af','#l8')
+                chk1('#ef','#l9')
+                chk1('#sc','#l10')
+                chk1('#ra','#l11')
+                maxmin()
+                session()
+                if (flag)
+                    var log=confirm('Are you sure want to insert this!')
+                    if(log){
+                        a=$('#un').val()
+                        b=$('#mode').val()
+                        c=$('#pn').val()
+                        d=$('#eli').val()
+                        e=$('#mind').val()
+                        f=$('#maxd').val()
+                        g=$('#le').is(':checked')
+                        if(g==true)
+                            g='Yes'
+                        else
+                            g='No'
+                        h=ses
+                        i=$('#pf').val()
+                        j=$('#af').val()
+                        k=$('#ef').val()
+                        l=$('#sc').val()
+                        m=$('#ra').val()
+                        // alert(a+','+b+','+c+','+d+','+e+','+f+','+g+','+h+','+i+','+j+','+k+','+l+','+m)
+                        $.ajax({
+                            url:'uni_info.py',
+                            method:'pos',
+                            data:{
+                                t:'ent1',
+                                t1:a,
+                                t2:b,
+                                t3:c,
+                                t4:d,
+                                t5:e,
+                                t6:f,
+                                t7:g,
+                                t8:h,
+                                t9:i,
+                                t10:j,
+                                t11:k,
+                                t12:l,
+                                t13:m,
+                            },
+                            success:function(data){
+                                if(data==0)
+                                    alert('Record all ready inserted!')
+                                else{
+                                    alert(data)
+                                    window.location.reload()
+                                }
+                            }
+                        })
+                    }
+            })
+            $('#b2').on('click',function(){
+                window.location.reload()
+            })
+            // -----------------------------------------------------------------------------------------------------------------------------------------
+            // ####################################################### Service Form ####################################################################
+            function load1(){
+                $.ajax({
+                    url:'uni_info.py',
+                    method:'post',
+                    data:{
+                        t:'click2'
+                    },
+                    success:function(data){
+                        data=data.split(',,,')
+                        $('#s1').append(data[0])
+                        $('#s2').append(data[1])
+                        $('#s3').append(data[2])
+                    }
+                })
+            }
+            $('#service').on('click',function(){
+                $('#s1').html('<option value="" selected disabled>-----Select University Name-----</option>')
+                $('#s2').html('<option value="" selected disabled>-----Select a Course-----</option>')
+                $('#s3').html('<option value="" selected disabled>-----Select a Mode-----</option>')
+                    load1()
+            })
+            $('#b4').on('click',function(){
+                $('#s1').html('<option value="" selected disabled>-----Select University Name-----</option>')
+                $('#s2').html('<option value="" selected disabled>-----Select a Course-----</option>')
+                $('#s3').html('<option value="" selected disabled>-----Select a Mode-----</option>')
+                    load1()
+                $(this).prop('disabled',true)
+                $('#d32').html('')
+
+            })
+            // ---------------------------------------------------------- Search ----------------------------------------------------------
+            $('#b3').on('click',function(){
+                $('#b4').prop('disabled',false)
+                a=$('#s1').val()
+                b=$('#s2').val()
+                c=$('#s3').val()
+                if(a==null && b==null && c==null)
+                    alert('Please select any one')
+                else
+                    $.ajax({
+                        url:'uni_info.py',
+                        method:'post',
+                        data:{
+                            t:'search1',
+                            t1:a,
+                            t2:b,
+                            t3:c
+                        },
+                        success:function(data){
+                            if(data==0){
+                                alert('Record not Found!')
+                                $('#d32').html('')    
+                            }
+                            else
+                            $('#d32').html(data)
+                            if(role=='2' || role=='3'){
+                                $('#b5').hide();
+                                $('#b6').hide();
+                                $('.rr1').text('')
+                            }
+                        }
+                    })
+            })
+            // -----------------------------------------------------------------------------------------------------------------------------------
+            // ----------------------------------------------------------- Updata ---------------------------------------------------------------
+            $(document).on('blur','#e',function(){
+                a=$(this).text()
+                $(this).text(a+"   ")
+            });
+            $(document).on('focus','#e',function(){
+                a=$(this).text().trim()
+                $(this).text(a)
+            })
+            $(document).on('click','#b5',function(){
+                var cell=$('input[name="r"]:checked').closest('tr').children("td").text().split('   ');
+                a=cell[0];
+                b=cell[1];
+                c=cell[2];
+                d=cell[3];
+                e=cell[4];
+                f=cell[5];
+                g=cell[6];
+                h=cell[7];
+                i=cell[8];
+                j=cell[9];
+                k=cell[10];
+                l=cell[11];
+                m=cell[12];
+                if (a=='')
+                    alert('Please select any one')
+                else
+                    var log=confirm('Are you sure want to update this')
+                    if(log)
+                    $.ajax({
+                        url:'uni_info.py',
+                        method:'post',
+                        data:{
+                            t:'update1',
+                            t1:a,
+                            t2:b,
+                            t3:c,
+                            t4:d,
+                            t5:e,
+                            t6:f,
+                            t7:g,
+                            t8:h,
+                            t9:i,
+                            t10:j,
+                            t11:k,
+                            t12:l,
+                            t13:m
+                        },
+                        success:function(data){
+                            alert(data)
+                        }
+                    })
+            })
+            // ----------------------------------------------------------------------------------------------------------------------------------
+            // ------------------------------------------------------------ Delete --------------------------------------------------------------
+            $(document).on('click','#b6',function(){
+                var cell=$('input[name="r"]:checked').closest('tr').children("td").text().split('   ');
+                a=cell[0];
+                b=cell[1];
+                c=cell[2];
+                if (a=='')
+                    alert('Please select any one')
+                else
+                    var log=confirm('Are you sure want to delete this')
+                    if(log)
+                    $.ajax({
+                        url:'uni_info.py',
+                        method:'post',
+                        data:{
+                            t:'delete1',
+                            t1:a,
+                            t2:b,
+                            t3:c
+                        },
+                        success:function(data){
+                            alert(data)
+                            $('input[name="r"]:checked').closest('tr').remove()
+                        }
+                    })
+            })
+            // ----------------------------------------------------------------------------------------------------------------------------------
+            // ############################################################# Table #############################################################
+            $('#dis').on('keypress',function(a){
+                if(!(a.which>=47 && a.which<=58))
+                    return false
+            })
+            $('#dis').on('input',function(a){
+                $('#pay').text($('#tot').text()-$(this).text())
+            })
+            $(document).on('click','#b7',function(){
+                var cell=$(this).closest('tr').children("td").text().split('   ');
+                $('#body').hide();
+                $('#body1').show();
+                $('body').css('background-color','white')
+                $('#hh1').html(cell[0])
+                $('#mode').text(cell[1])
+                $('#course').text(cell[2])
+                $('#let').text(cell[3])
+                $('#eligi').text(cell[6])
+                $('#mnd').text(cell[4])
+                $('#mxd').text(cell[5])
+                $('#sess').text(cell[7])
+                $('#prog').text(cell[8])
+                $('#adim').text(cell[9])
+                $('#exam').text(cell[10])
+                $('#serv').text(cell[11])
+                val=parseInt(cell[8])+parseInt(cell[9])+parseInt(cell[10])+parseInt(cell[11])
+                $('#tot').text(val)
+                $('#pay').text(val)
+                $.ajax({
+                    url:'uni_info.py',
+                    method:'post',
+                    data:{
+                        t:'pdf',
+                        t1:cell[0],
+                        t2:cell[1]
+                    },
+                    success:function(data){
+                        data=data.split(',,,')
+                        $('#hh2').text(data[0])
+                        $('#lin').attr('href',data[1])
+                        a=data[2].split("'")
+                        b=data[3].split("'")
+                        c=data[4].split("'")
+                        $('#broli').attr('href',a[1])
+                        $('#proli').attr('href',b[1])
+                        $('#afli').attr('href',c[1])
+                    }
+                })
+            })
+            $('#b8').on('click',function(){
+                $('#body').show();
+                $('#body1').hide();
+                $('body').css('background-color','#243949')
+            })
+            // $(document).on('click','.kl',function(){
+            //     alert($(this).attr('href'))
+            //     alert($(this).attr('ping'))
+            // })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Welcome to Dashboard</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <style>
+            * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .html {
+        font-size: 62.5%;
+    }
+
+    @media(max-width:998px) {
+        html {
+            font-size: 45%;
+        }
+    }
+
+    @media(max-width:768px) {
+        html {
+            font-size: 35%;
+        }
+    }
+    
+     .div1 {
+        width: auto;
+        height: auto;
+        display: flex;
+    }
+    .h1{
+        height: 4rem;
+        width: auto;
+    }
+    .h2{
+        height: 4rem;
+        width: auto;
+        font-size: 3rem;
+        margin-left: 2rem;
+    }
+    .t30 {
+        font-size: 3rem;
+        color: white;
+        padding-left: 2rem;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .t32 {
+        float: right;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    .LOG {
+        height: 8rem;
+        width: 100%;
+        margin: auto;
+        margin-top: 30vh;
+        text-align: center;
+    }
+    .LOG_2 {
+        height: auto;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+    .t33 {
+        border-radius:10rem;
+        background-color: red;
+        cursor: pointer;
+        position: sticky;
+        box-shadow: 0 0 1rem white;
+    }
+    .t37 {
+        color: white;
+        cursor: pointer;
+    }
+
+    .div8,.div10 {
+        border: solid .2rem #f2e162;
+        height: 5rem;
+        width: 25rem;
+        margin: auto;
+        padding: .5rem 0px 0px 1rem;
+        background-color: #f2e162;
+        cursor: pointer;
+    }
+
+    .div8{
+        margin-top: 35px;
+    }
+    .div10 {
+        margin-top: 9.38rem;
+    }
+    .div2 {
+        width: 30rem;
+        height: 100vh;
+        background-image: linear-gradient(to top, black, #FFE000);
+        border: solid .1rem black;
+    }
+
+    #da_ta{
+        height: 4rem;
+        background-color: lightskyblue;
+        box-shadow: 0 .5rem 1rem  gray;
+        justify-content: space-around;
+        display: flex;
+    }
+    .date{
+        font-size: 2.5rem;
+        float: left;
+        margin: .8rem 0 0 4rem;
+    }
+    .dpo_1{
+        height: auto;
+        max-width: 30rem;
+    }
+    #dp_i{
+        height: 3rem;
+        width: 30rem;
+        background-color: #efeded;
+        box-shadow: 0 0 1rem black;
+        font-size: 1.7rem;
+        margin-top: .9rem;
+    }
+    .time{
+        font-size: 2.5rem;
+        float: right;
+        margin: .8rem 4rem 0 0;
+    }
+    #pl_dt{
+        margin-top: 4rem;
+        height: auto;
+        display: flex;
+        margin-left: 2rem;
+    }
+    .div4,.div5{
+        height: 20rem;
+        width: 45%;
+        border-radius: 2.5rem;
+        float: left;
+        margin:0 3rem 2rem 3rem;
+        padding: 3rem 0 0 2rem;
+        cursor: pointer;
+    }
+    .div4 {
+        border: solid .1rem lightskyblue;
+        background-color: lightskyblue;
+    }
+
+    .div5 {
+        border: solid .1rem rgb(129, 57, 129);
+        background-color: rgb(129, 57, 129);
+    }
+    .t34 {
+        font-size: 3rem;
+        color: white;
+        margin-top: 2rem;
+        margin-left: 6rem;
+    }
+    .div3 {
+        width: 100%;
+        height: 100vh;
+        float: left;
+        background-color: rgb(239, 237, 237);
+    }
+    
+    .tab{
+        height: auto;
+        width: auto;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .t_r {
+        height: 50rem;
+        background-color: rgb(239, 237, 237);
+        overflow-y: auto;
+        font-size: 1.77rem;
+        padding-left: 2rem;
+    }
+    .table_1{
+        border: .1rem solid black;
+        width: 99%;
+    }
+    .table_1 tr{
+        height: 4rem;
+    }
+    .table_1 th{
+        background-color: lightblue;
+    }
+    .t_r2{
+        width: auto;
+        height: 28rem;
+        background-color: rgb(239, 237, 237);
+        overflow-y: auto;
+    }
+    .table_3,.table_3 th,.table_3 td{
+        height: 2rem;
+        border-collapse: collapse ;
+    }
+    .table_3 th{
+        border: solid .1rem black;
+        background-color: lightblue;
+        position: sticky;
+        top: 0;
+    }
+    .table_3{
+        width: 100%;
+    }
+    .table_3 tr{
+        height: 3rem;
+    }
+    td,th {
+        border: .1rem solid black;
+        text-align: center;
+        height: 4rem;
+    }
+    .th_1{
+        height: 2rem;
+        background-color: lightblue;
+    }
+    .t_r3{
+        height: 2rem;
+    }
+    .t36 {
+        background-color: #C3CFE2;
+        height: 2rem;
+    }
+
+    .t41 {
+        padding-left: 2rem;
+        
+    }
+    #rol,#a_i{
+        height: 100%;
+        width: 100%;
+        border: none;
+        text-align: center;
+        outline: none;
+        background-color: #efeded;
+    }
+    #set:hover{
+        color: blue;
+    }
+    #srh{
+        background-color: teal;
+        border-radius: 1rem;
+        color: white;
+        cursor: pointer; font-size: 1.5rem;height: 3rem;width: 10rem;
+        border: solid .1rem teal;
+    }
+    #srh:hover{
+        background-color: blue;
+        box-shadow: 0 0 1rem black;
+    }
+    #srh2{
+        background-color: teal;
+        border-radius: 1rem;
+        color: white;
+        cursor: pointer; font-size: 1.5rem;height: 3rem;width: 10rem;
+        border: solid .1rem teal;
+    }
+    #srh2:hover{
+        background-color: blue;
+        box-shadow: 0 0 1rem black;
+    }
+    #skt{
+        width: 60rem;
+        margin: auto;
+    }
+    </style>
+</head>
+<body oncontextmenu="return false;" style="user-select: none;">
+     <div class="div1 z" id="d_form">
+        <div class="div2">
+            <div class="h1">
+                <b><p class="t30">WELCOME</p></b>
+            </div>
+
+            <div class="h2">
+                <b><div id="tab2"></div></b>
+            </div>
+                <div class="div8 h" id="h" onclick="table_record()">
+                    <i class="fa fa-database" id="H" style="font-size:3rem;color: white; cursor: pointer;"></i>
+                    <label class="t32 h" id="H" style="margin-right: 12rem;">Records</label>
+                </div>
+                <div class="div10 e" id="e" onclick="search_record()">
+                    <i style="font-size:3rem;color: white;cursor: pointer;" class="fa">&#xf002;</i>
+                    <label class="t32 e" id="E" style="margin-right: 13rem;">Search</label>
+                </div>
+            <div class="LOG">
+            </div>
+            <div class="LOG_2">
+                <button class="t33 l"><i class="fa fa-power-off" style="font-size:4rem;color:white;margin-left: -.1rem;"></i></button>
+                <p class="t37 l">LOG OUT</p>
+            </div>
+        </div>
+        <div class="div3">
+            <div id="da_ta">
+                <div id="date" class="date"></div>
+                <div class="dp_1">
+                </div>
+                <div id="clock" class="time"></div>
+            </div>
+           <div id="pl_dt">
+                <div class="div4 o" id="o">
+                    <i class="fa fa-university" style="font-size:5rem;color:white;margin-left: 4rem;"></i>
+                    <p class="t34">University Details</p>
+                </div>
+                <div class="div5 d_p" id="d_p">
+                    <i class='fas fa-graduation-cap' style="font-size:5rem;color:white;margin-left: 4rem;"></i>
+                    <p class="t34">Program Details</p>
+                </div>
+            </div>
+         <div class="tab"></div>
+        <form>
+            <div id="s_r" style="width: auto; height: auto; display: none;" >
+                <div id="skt">
+                    <div style=" width: auto;height: auto; margin-top: 3rem;display: flex;">
+                        <div style="height: auto;width: auto;">
+                            <i style="font-size:3rem;" class="fa">&#xf0c0;</i>
+                        </div>&nbsp;&nbsp;&nbsp;
+                        <div style="height: auto;width: auto;">
+                            <select name="Any_one" id="a_o" class="a_o" style="width: 30rem; height: 3.5rem;font-size: 1.5rem;">
+                                <option value="Select any one of them" hidden>Select any one of them</option>
+                                <option value="Username">Username</option>
+                                <option value="UserID">UserID</option>
+                            </select>
+                            <span style=" color: red;" id="A_O"></span>
+                        </div>&nbsp;&nbsp;&nbsp;
+                        <div style="height: auto;width: auto;">
+                            <i class="fa fa-refresh fa-spin set" style="font-size:3rem;cursor: pointer;"></i> 
+                        </div>&nbsp;
+                        <div style="height: auto;width: auto;">
+                            <input type="reset" value="REFRESH" style=" border: hidden; font-size: 1.5rem; cursor: pointer;height: 3rem;width: 10rem;" id="set" class="set">
+                        </div>
+                    </div>    
+                        <div style=" width: auto;height: auto; margin-top: 1rem; display: flex;">
+                            <div style="height: auto;width: auto;">
+                                <i style="font-size:3rem;cursor: pointer;" onclick="finalcheck_3()" class="fa srh">&#xf002;</i>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div style="height: auto;width: auto;">
+                                <input style="width: 30rem; height: 3.5rem;" type="text" name="user" id="U_id"
+                                onfocusout="checkblank_3('U_id','u_ID','*Field is mandatory!')" onfocusin="cleardata_3('U_id','u_ID')">
+                                <span style=" color: red; " id="u_ID"></span>
+                            </div>&nbsp;&nbsp;&nbsp;
+                            <div style="height: auto;width: auto;">
+                                <input type="button" onclick="finalcheck_3()" id="srh" class="srh" value="Search"></input>
+                            </div>&nbsp;&nbsp;&nbsp; 
+                            <div style="height: auto;width: auto;">
+                                <input type="button" id="srh2" class="srh2" value="Search All"></input>
+                            </div>  
+                        </div>    
+                    </div>        
+                </div>  
+                <div class="tab_3" style="height: 65%; width: 95%; margin: auto; margin-top:20px;"></div>
+            </div>
+            </form>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            var role=localStorage.getItem('role').trim();
+            var u_n=localStorage.getItem('u_n').trim();
+            $(document).ready(function(){
+                a=document.referrer
+                // if(a=='')
+                //     a='raj'
+                // b=('http://localhost/uni_test/program_info.html','http://localhost/uni_test/university_info.html','http://localhost/uni_test/index.html')
+                // alert(a)
+                // alert(b.includes(a))
+                // if(b.includes(a)){
+                    if(role=='1')
+                {
+                    $('#tab2').html(u_n);
+                    $('body').show();
+                    $('.h').hide();
+                    $('.e').hide();
+                }
+                else if(role=='0')
+                {
+                    $('#tab2').html(u_n);
+                    $('body').show();
+                    show();
+                }
+                else if(role=='2'){
+                    $('#tab2').html(u_n);
+                    $('body').show();
+                    $('.h').hide();
+                    $('.e').hide();
+                }
+                else if(role=='3'){
+                    $('#tab2').html(u_n);
+                    $('body').show();
+                    $('.h').hide();
+                    $('.e').hide();
+                    $('.o').hide();
+                }
+                else
+                {
+                    window.location.href='index.html'
+                    $('body').hide();
+                }
+                // }
+                // else
+                // window.location.href='index.html'
+            });
+        // ###########################################################################################################################
+        $("#U_id").keydown(function(e){
+        if(e.which==13)
+            return false;
+        })
+        // ###########################################################################################################################
+            $(".l").click(function () {
+            window.location.href="index.html"
+            localStorage.setItem('role','4')
+            });
+         // ################################################################# script of DASHBOARD #####################################################################
+         $(document).ready(function(){
+			function clock(){
+				var d = new Date();
+				var time = d.toLocaleTimeString();
+                var date = d.toDateString();
+                $("#date").html(date);
+				$("#clock").html(time);
+			}
+			setInterval(clock,1000);
+		});
+        // ###########################################################################################################################
+        function show()
+        {
+            $.ajax({
+                url:"uni_info.py",
+                method:"post",
+                data:{
+                    t:"show"
+                },
+                success:function(data){
+                    $(".tab").html(data);
+                }
+            })
+        }
+        $(".h").click(function(){
+            show();
+        });
+        // ###########################################################################################################################
+         $(".h").mouseenter(function () {
+            $("#h").css('box-shadow', '5px 5px 10px black')
+        });
+        $(".h").mouseleave(function () {
+            $("#h").css('box-shadow', '0px 0px 0px')
+        });
+        // ###########################################################################################################################
+        function table_record(){
+            var x = document.getElementById("t_r");
+            var y = document.getElementById("s_r");
+            if(x.style.display === "none")
+            {
+                x.style.display = "block";
+                y.style.display = "none";
+            }
+            else
+                x.style.display = "none"
+        }
+        // ##########################################################################################################################
+        $(".t").mouseenter(function () {
+            $("#t").css('box-shadow', '5px 5px 10px black')
+        });
+        $(".t").mouseleave(function () {
+            $("#t").css('box-shadow', '0px 0px 0px')
+        });
+        $(".t").click(function () {
+            $(".ta").removeAttr("hidden", "false")
+        });
+        $(".e").mouseenter(function () {
+            $("#e").css('box-shadow', '5px 5px 10px black')
+        });
+        $(".e").mouseleave(function () {
+            $("#e").css('box-shadow', '0px 0px 0px')
+        });
+        // ##########################################################################################################################      
+        function search_record(){
+            var x = document.getElementById("s_r");
+            var y = document.getElementById("t_r");
+            if (x.style.display === "none")
+            {
+                x.style.display = "block"
+                y.style.display = "none"
+                x.removeAttribute("hidden","true")
+            }  
+            else
+                x.style.display = "none"
+        }
+        // ########################################################################################################################## 
+        $("#U_n").on('keypress', function (e) {
+            if (!(e.which >= 65 && e.which <= 90 || e.which >= 97 && e.which <= 122 || e.which == 32)) {
+                $("#u_N").html("*Only alphabet allowed!")
+                $("#U_n").css('border-color', 'red')
+                $("#U_n").css('box-shadow', '0 0 5px 0 red')
+                audio_play()
+                return false;
+            }
+        });
+        $('#U_n').on('click', function () {
+            $("#U_n").css('border-color', '')
+            $("#U_n").css('box-shadow', '')
+            $("#u_N").html("")
+        });
+         // ##########################################################################################################################
+            $(document).on('click','#srh',function(){
+                a=$("#a_o").val();
+                b=$("#U_id").val();
+                if(a=='Username' || a=='UserID'){
+                    $.ajax({
+                        url:'uni_info.py',
+                        method:'post',
+                        data:{
+                            t:"search_2",
+                            a:a,
+                            b:b
+                        },
+                        success:function(data){
+                            $(".tab_3").html(data)
+                        }
+                    });
+                }
+                else
+                    alert("Select username or userid first!")
+            });
+        // ##########################################################################################################################
+        $(document).on('click','#srh2',function(){
+                    $.ajax({
+                        url:'uni_info.py',
+                        method:'post',
+                        data:{
+                            t:"search_3",
+                        },
+                        success:function(data){
+                            $(".tab_3").html(data)
+                        }
+                    });
+            });
+        // ########################################################################################################################## 
+        $(".set").on("click",function(){
+            $(".tab_3").html('')
+        });
+        // ##########################################################################################################################
+        $(".p").mouseenter(function () {
+            $("#p").css('box-shadow', '5px 5px 10px black')
+        });
+        $(".p").mouseleave(function () {
+            $("#p").css('box-shadow', '0px 0px 0px')
+        });
+        // ##########################################################################################################################
+        $(".u").mouseenter(function () {
+            $("#u").css('box-shadow', '5px 5px 10px black')
+        });
+        $(".u").mouseleave(function () {
+            $("#u").css('box-shadow', '0px 0px 0px')
+        });
+        // ##########################################################################################################################
+        $(document).ready(function(){
+            $("#o").mouseenter(function () {
+            $("#o").css('box-shadow', '5px 5px 10px #9796F0')
+            });
+            $("#o").mouseleave(function () {
+                $("#o").css('box-shadow', '0px 0px 0px')
+            });
+            $("#d_p").mouseenter(function () {
+                $("#d_p").css('box-shadow', '5px 5px 10px #9796F0')
+            });
+            $("#d_p").mouseleave(function () {
+                $("#d_p").css('box-shadow', '0px 0px 0px')
+            });
+            $("#d").mouseenter(function () {
+                $("#d").css('box-shadow', '5px 5px 10px #9796F0')
+            });
+            $("#d").mouseleave(function () {
+                $("#d").css('box-shadow', '0px 0px 0px')
+            });
+            $("#t").mouseenter(function () {
+                $("#t").css('box-shadow', '5px 5px 10px #9796F0')
+            });
+            $("#t").mouseleave(function () {
+                $("#t").css('box-shadow', '0px 0px 0px')
+            });
+            $("#v").mouseenter(function () {
+                $("#v").css('box-shadow', '5px 5px 10px #9796F0')
+            });
+            $("#v").mouseleave(function () {
+                $("#v").css('box-shadow', '0px 0px 0px')
+            });
+        });
+        // ##########################################################################################################################
+        
+        // ##########################################################################################################################
+        $(document).on('click', '.up', function () {
+            if ($(this).prop('checked') ){ 
+                var cell = $(this).closest('tr').children("td").text().split('   ');
+                u1 = cell[0]
+                u2 = $(this).closest("tr").children('td').children('#a_i').val()
+                u3=$(this).closest("tr").children('td').children('#rol').val()
+                    var a = confirm("Are you sure want to update this data?");
+                    if (a) {
+                        $.ajax({
+                            url: 'uni_info.py',
+                            method: 'post',
+                            data:
+                            {
+                                t: "up1",
+                                a: u1,
+                                b: u2,
+                                c: u3
+                            },
+                            success: function (data) {
+                                alert(data)
+                            }
+                        });
+                    }
+            }
+        });$(document).on('click', '.dl', function () {
+            if ($(this).prop('checked') ){ 
+                var cell = $(this).closest('tr').children("td").text().split('   ');
+                u1 = cell[0]
+                    var a = confirm("Are you sure want to delete this data?");
+                    if (a) {
+                        $.ajax({
+                            url: 'uni_info.py',
+                            method: 'post',
+                            data:
+                            {
+                                t: "del1",
+                                a: u1
+                            },
+                            success: function (data) {
+                                alert(data)
+                                $(this).closest('tr').remove()
+                            }
+                        });
+                    }
+            }
+        });
+        // ########################################################################################################################## 
+        $(document).on('blur','#e',function(){
+            a=$(this).text()
+            $(this).text(a+"   ")
+        });
+        $(document).on('focus','#e',function(){
+            a=$(this).text().trim()
+            $(this).text(a)
+        })
+        $(document).on('keypress', '.u', function () {
+            $(this).closest('tr').children("td").css('background', 'yellow')
+        });
+        // ########################################################################################################################## 
+        function audio_play() {
+            const audio = new Audio();
+            audio.src = "mixkit-alert-bells-echo-765.wav";
+            audio.play();
+        }
+        // ########################################################################################################################## 
+        $(function () {
+            $('input').on('keydown', function (e) {
+                if (e.which === 32 && e.target.selectionStart === 0) {
+                    // audio_play();
+                    return false;
+                }
+            });
+        });
+        // ########################################################################################################################## 
+        $(function () {
+            $(document).on('keypress', '.double', function (e) {
+                var a = $(this).closest('tr').children('td:eq(2)').text();
+                if(!(e.which>=48 && e.which<=49))
+                {
+                    alert("Only 0 &1 digit allow here for role! ")
+                    $(this).closest('tr').children('td:eq(2)').css('background-color', '#FF7F50')
+                    return false;
+                }
+                else{
+                    $(this).closest('tr').children('td:eq(2)').text('');
+                    $(this).closest('tr').children('td:eq(2)').css('background-color', '')
+                }     
+            });
+        });
+        // ########################################################################################################################## 
+        $(function () {
+            $(document).on('keypress', '.third', function (e) {
+                var a = $(this).closest('tr').children('td:eq(3)').text();
+                if(!(e.which>=48 && e.which<=49))
+                {
+                    alert("Only 0 & 1 digit allow here for role! ")
+                    $(this).closest('tr').children('td:eq(3)').css('background-color', '#FF7F50')
+                    return false;
+                }
+                else{
+                    $(this).closest('tr').children('td:eq(3)').text('');
+                    $(this).closest('tr').children('td:eq(3)').css('background-color', '')
+                }              
+            });
+        });
+        // ########################################################################################################################## 
+        $(document).on('keypress', '#l_pwd', function (e) {
+            if (e.keyCode == 13)
+                $('#l_i').click();
+        });
+        // ########################################################################################################################## 
+        $(document).on('click','.r1',function(){
+            var cell = $(this).closest('tr').children("td").text().split('   ');
+            if($(this).prop('checked'))
+            {
+                v1 = cell[1]
+                v2 = $(this).closest("tr").children('td').children('#a_i').val()
+                $(this).closest('tr').css('background-color','yellow')
+                var b = confirm("Are you want to update this data?");
+                if (b) {
+                    $.ajax({
+                        url: "uni_info.py",
+                        method: "post",
+                        data:
+                        {
+                            t: "up3",
+                            a: v1,
+                            b: v2
+                        },
+                        success: function (data) {
+                            alert(data)
+                        }
+                    });
+                }
+            }
+            });
+        // ########################################################################################################################## 
+        $(document).on('keypress', '.u2', function () {
+            $(this).closest('tr').children("td").css('background', 'yellow')
+        });
+        $(document).on('keypress', '.U2', function () {
+            $(this).closest('tr').children("td").css('background', 'yellow')
+        });
+        // ###########################################################################################################################
+        $('#d_p').click(function(){
+            window.location.href="program_info.html"
+        })
+        $('#o').click(function(){
+            window.location.href="university_info.html"
+        })
+        </script>
+</body>
+</html>
